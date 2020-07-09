@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -111,6 +112,15 @@ public static class Utilities
 
     private static float VolumeToDB(float volume) => volume != 0 ? 40.0f * Mathf.Log10(volume) : -144.0f;
     private static float DBToVolume(float db) => Mathf.Pow(10.0f, db / 40.0f);
+
+
+    public static void Invoke(Action action, float delay, MonoBehaviour behaviour) {
+        behaviour.StartCoroutine(DoInvoke(action, delay));
+    }
+    private static IEnumerator DoInvoke(Action action, float delay) {
+        yield return new WaitForSeconds(delay);
+        action?.Invoke();
+    }
 }
 
 public delegate void EmptyDelegate();
