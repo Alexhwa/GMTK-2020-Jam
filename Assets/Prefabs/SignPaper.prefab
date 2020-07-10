@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3617031}
+  m_Offset: {x: 0, y: -0.5052238}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.6414031}
+  m_Size: {x: 1, y: 0.25868142}
   m_EdgeRadius: 0
 --- !u!120 &651404529
 LineRenderer:
@@ -165,7 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804b5f045acd6cb4ab868fe9fd76b263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  levelRunner: {fileID: 0}
+  moveSpeed: 2
   collision: {fileID: 5630183370989042032}
   sprite: {fileID: 7213354802559127209}
   fadeTime: 0.5
@@ -182,10 +183,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5845744499738502080, guid: 161c1fbba5b32484887e14a53be8afea,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83dd2b34f95dfd44fa51e40e292fe48d,
+        type: 3}
     - target: {fileID: 5845744501031543611, guid: 161c1fbba5b32484887e14a53be8afea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5
+      value: -1.959
       objectReference: {fileID: 0}
     - target: {fileID: 5845744501031543611, guid: 161c1fbba5b32484887e14a53be8afea,
         type: 3}
