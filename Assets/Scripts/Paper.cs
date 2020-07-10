@@ -5,7 +5,10 @@ using DG.Tweening;
 
 public class Paper : MonoBehaviour
 {
-    public bool isActive;
+    public bool isActive { get; protected set; }
+    public bool isClicked { get; protected set; }
+
+    [Header("Components")]
     public Collider2D coll;
     public SpriteRenderer sprite;
 
@@ -14,32 +17,50 @@ public class Paper : MonoBehaviour
     public float rotateTo;
     public float scaleTo;
     public Ease ease;
+    protected Tween paperDisappearTween;
 
     public static EmptyDelegate OnPaperComplete;
 
-    private void Update() {
+
+    private void Start() {
+        isActive = true;
+    }
+
+    protected virtual void Update() {
         if (!isActive) {
             return;
         }
 
-        Camera cam = Managers.ScenesManager?.cam;
-        if (cam == null) {
-            return;
+        Vector2 mousePoint = Managers.ScenesManager?.cam?.ScreenToWorldPoint(Input.mousePosition).ToVector2() ?? new Vector2(-1000, -1000);
+
+        if (!isClicked && Input.GetMouseButtonDown(0) && coll.bounds.Contains(mousePoint)) {
+            OnClicked(mousePoint);
         }
 
-        if (Input.GetMouseButtonDown(0)) {
-            Vector2 mousePoint = cam.ScreenToWorldPoint(Input.mousePosition).ToVector2();
+        if (isClicked && Input.GetMouseButton(0)) {
+            OnHeld(mousePoint);
+        }
 
-            if (coll.bounds.Contains(mousePoint)) {
-                Debug.Log("clicked paper");
-                PaperCompleted();
-            }
+        if (isClicked && Input.GetMouseButtonUp(0)) {
+            OnUnclicked(mousePoint);
         }
     }
 
-    public void PaperCompleted() {
+    protected virtual void OnClicked(Vector2 mousePoint) {
+        isClicked = true;
+    }
+
+    protected virtual void OnHeld(Vector2 mousePoint) {
+
+    }
+
+    protected virtual void OnUnclicked(Vector2 mousePoint) {
+        isClicked = false;
+    }
+
+    protected virtual void PaperCompleted() {
         isActive = false;
-        DOTween.Sequence()
+        paperDisappearTween = DOTween.Sequence()
             .Insert(0, sprite.DOFade(0, fadeTime).OnComplete(() => Destroy(gameObject)))
             .Insert(0, sprite.transform.DORotate(new Vector3(0, 0, rotateTo), fadeTime).SetEase(ease))
             .Insert(0, sprite.transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
