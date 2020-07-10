@@ -8,6 +8,9 @@ public class Paper : MonoBehaviour
     public bool isActive { get; protected set; }
     public bool isClicked { get; protected set; }
 
+    public float moveSpeed;
+    [HideInInspector] public Vector3 moveDirection;
+
     [Header("Components")]
     public Collider2D coll;
     public SpriteRenderer sprite;
@@ -27,6 +30,11 @@ public class Paper : MonoBehaviour
     }
 
     protected virtual void Update() {
+        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        CheckInteract();
+    }
+
+    protected void CheckInteract() {
         if (!isActive) {
             return;
         }
@@ -66,5 +74,10 @@ public class Paper : MonoBehaviour
             .Insert(0, sprite.transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
 
         OnPaperComplete?.Invoke();
+    }
+
+    public virtual void ShredPaper() {
+        Debug.Log("oh no");
+        Destroy(gameObject);
     }
 }

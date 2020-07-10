@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804b5f045acd6cb4ab868fe9fd76b263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1
+  moveDirection: {x: 0, y: 0, z: 0}
   coll: {fileID: 7213354803682070097}
   sprite: {fileID: 7213354802559127209}
   fadeTime: 0.5
