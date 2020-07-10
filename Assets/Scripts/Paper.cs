@@ -22,7 +22,7 @@ public class Paper : MonoBehaviour
     public static EmptyDelegate OnPaperComplete;
 
 
-    private void Start() {
+    protected virtual void Start() {
         isActive = true;
     }
 

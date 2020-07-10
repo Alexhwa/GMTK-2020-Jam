@@ -21,8 +21,6 @@ public class SignPaper : Paper
             return;
         }
 
-        Debug.Log("starting to sign at " + mousePoint);
-
         previousDrawPoint = mousePoint;
 
         lineRenderer.positionCount++;
