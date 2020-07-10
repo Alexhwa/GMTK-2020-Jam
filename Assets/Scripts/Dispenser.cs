@@ -22,6 +22,5 @@ public class Dispenser : MonoBehaviour
 
     private void DispensePaper() {
         GameObject newPaper = Instantiate(paperPrefabs[Random.Range(0, paperPrefabs.Count)], transform.position, Quaternion.identity);
-        newPaper.GetComponent<Paper>().moveDirection = transform.right;
     }
 }

@@ -261,8 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  moveDirection: {x: 0, y: 0, z: 0}
-  coll: {fileID: 1371774049839917275}
+  collision: {fileID: 4121096235337752570}
   sprite: {fileID: 1371774048718579747}
   fadeTime: 0.5
   rotateTo: -75
@@ -347,12 +346,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4767557855771560931}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1371774049839917275 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5845744501031543608, guid: 161c1fbba5b32484887e14a53be8afea,
+--- !u!114 &4121096235337752570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -353295431647456231, guid: 161c1fbba5b32484887e14a53be8afea,
     type: 3}
   m_PrefabInstance: {fileID: 4767557855771560931}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371774049839917277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9cbbcd76f98b343a67d7b87cea2d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1371774048718579746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5845744499738502081, guid: 161c1fbba5b32484887e14a53be8afea,

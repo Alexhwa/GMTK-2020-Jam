@@ -9,7 +9,7 @@ public class Collision : MonoBehaviour
     [SerializeField]
     protected string[] targetTags;
 
-    protected Collider2D coll;
+    public Collider2D coll;
 
     protected List<Collider2D> colliders;
     public bool IsColliding { get {

@@ -8,11 +8,13 @@ public class Paper : MonoBehaviour
     public bool isActive { get; protected set; }
     public bool isClicked { get; protected set; }
 
+    [Header("Movement")]
     public float moveSpeed;
-    [HideInInspector] public Vector3 moveDirection;
+    private Coroutine moveCoroutine;
 
     [Header("Components")]
-    public Collider2D coll;
+    public Collision collision;
+    public Collider2D coll { get { return collision.coll; }}
     public SpriteRenderer sprite;
 
     [Header("Animation")]
@@ -29,9 +31,26 @@ public class Paper : MonoBehaviour
         isActive = true;
     }
 
-    protected virtual void Update() {
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+    protected virtual void FixedUpdate() {
+        if (moveCoroutine == null) {
+            if (collision.IsColliding) {
+                moveCoroutine = StartCoroutine(Move(collision.Collider.transform.position + collision.Collider.transform.right));
+            }
+        }
+
         CheckInteract();
+    }
+
+    protected IEnumerator Move(Vector3 targetPosition) {
+        while (transform.position != targetPosition) {
+            Vector3 direction = targetPosition - transform.position;
+            direction = Vector3.ClampMagnitude(direction, moveSpeed * Time.fixedDeltaTime);
+            transform.position += direction;
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        moveCoroutine = null;
     }
 
     protected void CheckInteract() {
