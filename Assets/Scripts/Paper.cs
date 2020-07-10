@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Paper : MonoBehaviour
+public class Paper : LevelElement
 {
     public bool isActive { get; protected set; }
     public bool isClicked { get; protected set; }
