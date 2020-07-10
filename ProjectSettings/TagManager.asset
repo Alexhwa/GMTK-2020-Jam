@@ -3,7 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags: [Enemy, Ground, Paper, Conveyor]
   layers:
   - Default
   - TransparentFX
@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 
@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 495516687
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: AboveBackground
+    uniqueID: 1304345543
+    locked: 0
+  - name: Foreground
+    uniqueID: 327647711
+    locked: 0
+  - name: AboveForeground
+    uniqueID: 3821365281
+    locked: 0
+  - name: UI
+    uniqueID: 972760893
     locked: 0
