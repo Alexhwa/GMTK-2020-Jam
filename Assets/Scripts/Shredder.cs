@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shredder : MonoBehaviour
+public class Shredder : LevelElement
 {
     public Collision collision;
 
