@@ -9,7 +9,10 @@ public class Shredder : LevelElement
     private void Update() {
         if (collision.IsColliding) {
             Paper paper = collision.Collider.GetComponent<Paper>();
-            paper.ShredPaper();
+
+            if (paper.isActive) {
+                paper.ShredPaper();
+            }
         }
     }
 }

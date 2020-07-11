@@ -23,6 +23,7 @@ public class CheckPaper : Paper
             if (!checkbox.isChecked && checkbox.hitbox.bounds.Contains(mousePoint)) {
                 checkbox.OnChecked();
                 numCheckboxesLeft--;
+                break;
             }
         }
 

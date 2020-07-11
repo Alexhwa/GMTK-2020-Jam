@@ -122,7 +122,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 9, y: 9}
   m_EdgeRadius: 0
 --- !u!1 &197681087
 GameObject:
@@ -246,7 +246,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 9, y: 9}
   m_EdgeRadius: 0
 --- !u!114 &609603034
 MonoBehaviour:
@@ -261,9 +261,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelRunner: {fileID: 0}
-  moveSpeed: 2
+  shouldStopTime: 0
   collision: {fileID: 4121096235337752570}
   sprite: {fileID: 1371774048718579747}
+  timeSprite: {fileID: 21300000, guid: 09eee30f34dafd741b95ba4069159e15, type: 3}
   fadeTime: 0.5
   rotateTo: -75
   scaleTo: 0.2

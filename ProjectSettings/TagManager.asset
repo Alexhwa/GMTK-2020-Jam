@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Enemy, Ground, Paper, Conveyor]
+  tags:
+  - Enemy
+  - Ground
+  - Paper
+  - Conveyor
+  - Out
+  - Trash
   layers:
   - Default
   - TransparentFX

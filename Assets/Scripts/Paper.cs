@@ -8,14 +8,16 @@ public class Paper : LevelElement
     public bool isActive { get; protected set; }
     public bool isClicked { get; protected set; }
 
-    [Header("Movement")]
-    public float moveSpeed;
+    public bool shouldStopTime;
+
+    private float moveSpeed;
     private Coroutine moveCoroutine;
 
     [Header("Components")]
     public Collision collision;
     public Collider2D coll { get { return collision.coll; }}
     public SpriteRenderer sprite;
+    public Sprite timeSprite;
 
     [Header("Animation")]
     public float fadeTime;
@@ -25,9 +27,16 @@ public class Paper : LevelElement
     protected Tween paperDisappearTween;
 
     public static EmptyDelegate OnPaperComplete;
+    public static EmptyDelegate OnPaperShred;
 
+
+    public void SetTimeStop() {
+        shouldStopTime = true;
+        sprite.sprite = timeSprite;
+    }
 
     protected virtual void Start() {
+        moveSpeed = levelRunner.paperBaseSpeed * levelRunner.paperSpeedMultiplier;
         isActive = true;
     }
 
@@ -43,9 +52,11 @@ public class Paper : LevelElement
 
     protected IEnumerator Move(Vector3 targetPosition) {
         while (transform.position != targetPosition) {
-            Vector3 direction = targetPosition - transform.position;
-            direction = Vector3.ClampMagnitude(direction, moveSpeed * Time.fixedDeltaTime);
-            transform.position += direction;
+            if (!levelRunner.isTimePaused) {
+                Vector3 direction = targetPosition - transform.position;
+                direction = Vector3.ClampMagnitude(direction, moveSpeed * Time.fixedDeltaTime);
+                transform.position += direction;
+            }
 
             yield return new WaitForFixedUpdate();
         }
@@ -93,10 +104,14 @@ public class Paper : LevelElement
             .Insert(0, sprite.transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
 
         OnPaperComplete?.Invoke();
+
+        if (shouldStopTime) {
+            levelRunner.DoTimePause();
+        }
     }
 
     public virtual void ShredPaper() {
-        Debug.Log("oh no");
+        OnPaperShred?.Invoke();
         Destroy(gameObject);
     }
 }

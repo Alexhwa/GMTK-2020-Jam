@@ -114,8 +114,8 @@ public static class Utilities
     private static float DBToVolume(float db) => Mathf.Pow(10.0f, db / 40.0f);
 
 
-    public static void Invoke(Action action, float delay, MonoBehaviour behaviour) {
-        behaviour.StartCoroutine(DoInvoke(action, delay));
+    public static Coroutine Invoke(Action action, float delay, MonoBehaviour behaviour) {
+        return behaviour.StartCoroutine(DoInvoke(action, delay));
     }
     private static IEnumerator DoInvoke(Action action, float delay) {
         yield return new WaitForSeconds(delay);
