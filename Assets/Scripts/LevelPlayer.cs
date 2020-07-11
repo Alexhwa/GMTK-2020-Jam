@@ -22,6 +22,8 @@ public class LevelPlayer : MonoBehaviour
     public bool started { get; private set; }
     public bool finished { get; private set; }
 
+    public bool shouldAudioPitch = true;
+
     public static EmptyDelegate OnTimeOver;
 
     public int score = 0;
@@ -39,20 +41,25 @@ public class LevelPlayer : MonoBehaviour
         if (!isActive) {
             return;
         }
-        
+
         levelTimer = Mathf.Min(levelTimer + Time.deltaTime, levelTime);
 
         if (!started && levelTimer >= 0) {
             started = true;
+            Managers.AudioManager.bgmAudio.pitch = 1;
             Managers.AudioManager.bgmAudio.Play();
         }
         if (!finished && levelTimer == levelTime) {
             finished = true;
             TimeOver();
             Managers.AudioManager.bgmAudio.Stop();
+            Managers.AudioManager.bgmAudio.pitch = 1;
         }
-        Managers.AudioManager.bgmAudio.pitch = Mathf.Lerp(1, 1.8f, Mathf.Pow(1 - TimeRemaining / levelTime, 3));
-     
+
+        if (started && !finished && shouldAudioPitch) {
+            Managers.AudioManager.bgmAudio.pitch = Mathf.Lerp(1, 1.8f, Mathf.Pow(1 - TimeRemaining / levelTime, 3));
+        }
+
         raycastBlocker.blocksRaycasts = !spawner.canSpawn;
     }
 

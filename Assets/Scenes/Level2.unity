@@ -461,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 1477180811260942283, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: waveDatas.Array.data[6].paperLifetime
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1477180811333013635, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
