@@ -14,6 +14,8 @@ public class LevelPlayer : MonoBehaviour
 
     public float TimeRemaining { get { return levelTimer >= 0 ? levelTime - levelTimer : levelTime; }}
 
+    public static EmptyDelegate OnTimeOver;
+
 
     int score = 0;
 
@@ -24,6 +26,10 @@ public class LevelPlayer : MonoBehaviour
 
     private void Update() {
         levelTimer = Mathf.Min(levelTimer + Time.deltaTime, levelTime);
+
+        if (levelTimer == levelTime) {
+            TimeOver();
+        }
         
         if (levelTimer >= 0 && levelTimer < levelTime) {
             spawner.canSpawn = true;
@@ -46,5 +52,10 @@ public class LevelPlayer : MonoBehaviour
 
     private void PaperSubmitted() {
         score++;
+    }
+
+
+    private void TimeOver() {
+        OnTimeOver?.Invoke();
     }
 }

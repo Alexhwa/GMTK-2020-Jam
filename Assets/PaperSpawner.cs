@@ -6,6 +6,7 @@ using DG.Tweening;
 public class PaperSpawner : MonoBehaviour
 {
     public Camera cam;
+    public Collider2D tableCollider;
     public List<GameObject> paperPrefabs;
 
     public bool canSpawn { get; set; }
@@ -36,7 +37,6 @@ public class PaperSpawner : MonoBehaviour
     }
 
 
-    [ContextMenu("Spawn")]
     public void SpawnPapers() {
         for (int i = 0; i < waveSize; i++) {
             GameObject paperObj = Instantiate(
@@ -50,6 +50,7 @@ public class PaperSpawner : MonoBehaviour
 
             BigPaper paper = paperObj.GetComponent<BigPaper>();
             paper.paperSpawner = this;
+            paper.table = tableCollider;
             paper.lifeTime = paperLifetime;
 
             paperObj.transform.DOMove(
