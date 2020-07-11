@@ -7,11 +7,10 @@ public class CheckPaper : Paper
 {
     [Header("Check")]
     public List<Checkbox> checkboxes;
-    private int numCheckboxesLeft;
+    public int numCheckboxesLeft;
 
     protected override void Start() {
         base.Start();
-        numCheckboxesLeft = checkboxes.Count;
     }
 
     protected override void OnClicked(Vector2 mousePoint) {

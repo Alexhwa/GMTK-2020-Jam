@@ -9,6 +9,7 @@ public class CheckPaperController : MonoBehaviour
 {
     public BigPaper paper;
     public List<Image> checkmarks;
+    public int requiredCheckmarks;
 
     private void OnEnable() {
         paper.OnTrashed.AddListener(OnPaperTrash);
@@ -29,7 +30,7 @@ public class CheckPaperController : MonoBehaviour
     public void CheckboxClicked(int index) {
         checkmarks[index].color = checkmarks[index].color.WithAlpha(1);
 
-        if (checkmarks.All(check => check.color.a == 1)) {
+        if (checkmarks.Where(check => check.color.a == 1).Count() >= requiredCheckmarks) {
             // completed
             paper.PaperCompleted();
         }
