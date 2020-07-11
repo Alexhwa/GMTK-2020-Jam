@@ -21,8 +21,12 @@ public class BigPaper : MonoBehaviour
     public Collider2D coll { get { return collision.coll; }}
     public CanvasGroup canvasGroup;
     public Canvas canvas;
+    public RectTransform sheenRect;
+    public Image completeBorder;
 
     [Header("Animation")]
+    public float completeTime;
+    public float sheenMoveAmount;
     public float fadeTime;
     public float rotateTo;
     public float scaleTo;
@@ -85,6 +89,9 @@ public class BigPaper : MonoBehaviour
     public virtual void PaperCompleted() {
         isCompleted = true;
 
+        sheenRect.DOAnchorPosY(sheenRect.anchoredPosition.y - sheenMoveAmount, completeTime).SetEase(Ease.InOutQuad);
+        completeBorder.DOFade(1, completeTime).SetEase(Ease.InOutQuad);
+
         OnComplete?.Invoke();
     }
 
@@ -124,7 +131,7 @@ public class BigPaper : MonoBehaviour
 
 
     public void SortToTop() {
-        if (paperSpawner.SortToTop(this)) {
+        if (paperSpawner != null && paperSpawner.SortToTop(this)) {
             OnSortToTop?.Invoke();
 
             aliveTimer = 0;
