@@ -7,16 +7,27 @@ public class SignPaperController : MonoBehaviour
 {
     public Canvas canvas;
     public BigPaper paper;
-    public LineRenderer lineRenderer;
+    public RectTransform signArea;
+    public GameObject linePrefab;
+    private LineRenderer lineRenderer;
 
     public Vector2 previousDrawPoint;
 
     private float drawDistance;
     public float requiredDrawDistance;
 
+
+    private void Start() {
+        GameObject line = Instantiate(linePrefab, transform.position, Quaternion.identity);
+        lineRenderer = line.GetComponent<LineRenderer>();
+    }
+
+    private void Update() {
+        lineRenderer.transform.position = transform.position;
+    }
+
     public void BeginDrag() {
-        Debug.Log("begin drag");
-        Vector2 mousePoint = GetMousePoint();
+        Vector2 mousePoint = paper.GetMousePoint();
         previousDrawPoint = mousePoint;
 
         lineRenderer.positionCount++;
@@ -24,8 +35,15 @@ public class SignPaperController : MonoBehaviour
     }
 
     public void Drag() {
-        Vector2 mousePoint = GetMousePoint();
-        Vector2 drawPoint = mousePoint;
+        
+
+        Vector2 mousePoint = paper.GetMousePoint();
+        Vector2 drawPoint = Utilities.ClampInRect(mousePoint, Utilities.RectFromCenter(signArea.position, signArea.rect.size));
+
+        if ((drawPoint - previousDrawPoint).sqrMagnitude >= 0.001f) {
+            lineRenderer.positionCount++;
+            lineRenderer.SetPosition(lineRenderer.positionCount - 1, lineRenderer.transform.InverseTransformPoint(drawPoint));
+        }
 
         drawDistance += (drawPoint - previousDrawPoint).magnitude;
         if (drawDistance >= requiredDrawDistance) {
@@ -36,5 +54,5 @@ public class SignPaperController : MonoBehaviour
     }
 
 
-    private Vector2 GetMousePoint() => canvas.worldCamera.ScreenToWorldPoint(Input.mousePosition).ToVector2();
+    
 }
