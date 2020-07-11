@@ -15,7 +15,7 @@ public class BigPaper : MonoBehaviour
     private float aliveTimer;
 
     [HideInInspector] public PaperSpawner paperSpawner;
-    [HideInInspector] public Collider2D table;
+    public Collider2D table;
 
     [Header("Components")]
     public Collision collision;
