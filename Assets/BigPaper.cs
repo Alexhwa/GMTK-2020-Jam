@@ -40,6 +40,7 @@ public class BigPaper : MonoBehaviour
     public UnityEvent OnSubmit;
     public UnityEvent OnTrashed;
     public UnityEvent OnDestroyed;
+    public static EmptyDelegate OnPaperSubmitted;
 
     
     private void Start() {
@@ -107,6 +108,7 @@ public class BigPaper : MonoBehaviour
             .Insert(0, transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
 
         OnSubmit?.Invoke();
+        OnPaperSubmitted?.Invoke();
     }
 
     public void PaperTrashed() {

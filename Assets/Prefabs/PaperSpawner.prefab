@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 4517358789438099188, guid: ade011926eafef04a9d480a17ad7aa05, type: 3}
   waveSize: 1
   spawnTime: 1
+  paperLifetime: 120
   spawnRegion:
     serializedVersion: 2
     x: -6

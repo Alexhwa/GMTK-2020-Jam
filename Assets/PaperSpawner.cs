@@ -8,8 +8,11 @@ public class PaperSpawner : MonoBehaviour
     public Camera cam;
     public List<GameObject> paperPrefabs;
 
+    public bool canSpawn { get; set; }
+
     public int waveSize;
     public float spawnTime;
+    public float paperLifetime;
     public Rect spawnRegion;
     public float moveTime;
     public float maxRotate;
@@ -23,10 +26,12 @@ public class PaperSpawner : MonoBehaviour
     }
 
     private void Update() {
-        spawnTimer += Time.deltaTime;
-        if (spawnTimer > spawnTime) {
-            SpawnPapers();
-            spawnTimer -= spawnTime;
+        if (canSpawn) {
+            spawnTimer += Time.deltaTime;
+            if (spawnTimer > spawnTime) {
+                SpawnPapers();
+                spawnTimer -= spawnTime;
+            }
         }
     }
 
@@ -45,6 +50,7 @@ public class PaperSpawner : MonoBehaviour
 
             BigPaper paper = paperObj.GetComponent<BigPaper>();
             paper.paperSpawner = this;
+            paper.lifeTime = paperLifetime;
 
             paperObj.transform.DOMove(
                 spawnRegion.min + new Vector2(Random.Range(0, spawnRegion.size.x), Random.Range(0, spawnRegion.size.y)), moveTime
