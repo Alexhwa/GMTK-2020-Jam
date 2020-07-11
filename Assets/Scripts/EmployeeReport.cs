@@ -18,20 +18,28 @@ public class EmployeeReport : MonoBehaviour
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI scoreText;
     public Image[] stars;
+    public TextMeshProUGUI[] starTexts;
 
 
     public void InitializeReport(LevelPlayer player) {
         timeText.text = "Time: " + Mathf.FloorToInt(player.levelTime / 60) + ":" + ("" + (100 + Mathf.FloorToInt(player.levelTime % 60))).Substring(1);
         scoreText.text = "Score: " + player.score;
 
+        starTexts[0].text = "" + player.oneStarThreshold;
+        starTexts[1].text = "" + player.twoStarThreshold;
+        starTexts[2].text = "" + player.threeStarThreshold;
+
         if (player.score < player.threeStarThreshold) {
             stars[2].color = unreachedStarColor;
+            starTexts[2].color = Color.white;
         }
         if (player.score < player.twoStarThreshold) {
             stars[1].color = unreachedStarColor;
+            starTexts[1].color = Color.white;
         }
         if (player.score < player.oneStarThreshold) {
             stars[0].color = unreachedStarColor;
+            starTexts[0].color = Color.white;
         }
 
         back.interactable = true;
