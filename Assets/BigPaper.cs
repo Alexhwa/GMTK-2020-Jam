@@ -15,6 +15,7 @@ public class BigPaper : MonoBehaviour
     private float aliveTimer;
 
     [HideInInspector] public PaperSpawner paperSpawner;
+    [HideInInspector] public Collider2D table;
 
     [Header("Components")]
     public Collision collision;
@@ -66,13 +67,16 @@ public class BigPaper : MonoBehaviour
 
         SortToTop();
 
-        transform.position = GetMousePoint() - dragOffset;
+        transform.position = Utilities.ClampInRect(GetMousePoint() - dragOffset, new Rect(table.bounds.min, table.bounds.size));
     }
 
     public void EndDrag() {
         if (isActive && collision.IsColliding && collision.Collider.CompareTag("Out") && isCompleted) {
-            PaperSubmitted();
-            collision.Collider.GetComponent<Outbox>().PaperSubmitted(this);
+            Outbox outbox = collision.Collider.GetComponent<Outbox>();
+            if (outbox.isActive) {
+                outbox.PaperSubmitted(this);
+                PaperSubmitted();
+            }
         }
     }
 
