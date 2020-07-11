@@ -8,18 +8,22 @@ public class LevelPlayer : MonoBehaviour
 {
     public PaperSpawner spawner;
     public CanvasGroup raycastBlocker;
+    public EmployeeReport report;
 
     public float levelTime;
     public float levelTimer { get; private set; }
+    public float TimeRemaining { get { return levelTimer >= 0 ? levelTime - levelTimer : levelTime; }}
+
+    public int oneStarThreshold;
+    public int twoStarThreshold;
+    public int threeStarThreshold;
 
     public bool started { get; private set; }
-
-    public float TimeRemaining { get { return levelTimer >= 0 ? levelTime - levelTimer : levelTime; }}
+    public bool finished { get; private set; }
 
     public static EmptyDelegate OnTimeOver;
 
-
-    int score = 0;
+    public int score = 0;
 
 
     private void Awake() {
@@ -37,7 +41,8 @@ public class LevelPlayer : MonoBehaviour
             started = true;
             Managers.AudioManager.bgmAudio.Play();
         }
-        if (levelTimer == levelTime) {
+        if (!finished && levelTimer == levelTime) {
+            finished = true;
             TimeOver();
             Managers.AudioManager.bgmAudio.Stop();
         }
@@ -61,6 +66,8 @@ public class LevelPlayer : MonoBehaviour
 
 
     private void TimeOver() {
+        Utilities.Invoke(() => report.InitializeReport(this), 1.5f, this);
+
         OnTimeOver?.Invoke();
     }
 }

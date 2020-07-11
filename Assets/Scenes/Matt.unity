@@ -1037,7 +1037,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 1463912078}
   raycastBlocker: {fileID: 1329804957}
+  report: {fileID: 1684620169}
   levelTime: 45
+  oneStarThreshold: 5
+  twoStarThreshold: 12
+  threeStarThreshold: 20
+  score: 0
 --- !u!4 &661540714
 Transform:
   m_ObjectHideFlags: 0
@@ -2392,6 +2397,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ff6316d9d538b49aa85683b1aedb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backMoveOffset: 516
+  panelMoveOffset: 450
+  fadeTime: 0.5
+  unreachedStarColor: {r: 0, g: 0, b: 0, a: 0.15686275}
+  back: {fileID: 1657336137}
+  panel: {fileID: 1742732803}
+  timeText: {fileID: 1134754286}
+  scoreText: {fileID: 1543356870}
+  stars:
+  - {fileID: 259521763}
+  - {fileID: 2088388186}
+  - {fileID: 512118640}
 --- !u!1 &1742732799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,6 +2420,7 @@ GameObject:
   - component: {fileID: 1742732800}
   - component: {fileID: 1742732802}
   - component: {fileID: 1742732801}
+  - component: {fileID: 1742732803}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2472,6 +2490,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742732799}
   m_CullTransparentMesh: 0
+--- !u!225 &1742732803
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742732799}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1895439176
 GameObject:
   m_ObjectHideFlags: 0
