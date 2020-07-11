@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e24092d584d5648b17fd5779c32c2a, type: 3}
-  m_Name: Devil dialogue 1
+  m_Name: Devil dialogue 0
   m_EditorClassIdentifier: 
   conversationBlock:
-  - <pause=.9><size=50>AGHHHHHHHHHHH</size>
+  - <pause=.9>First day on the job, huh?
+  - Don't worry. You get used to the constant feeling of <pause=.3><speed=3>...<speed=10>agony.
+    <speed=60>
+  - <emotion=sad>Just don't get on the boss's bad side. He's fond of throwing things.
   - 
   character: {fileID: 11400000, guid: 6a292f240b6f7824f8b0a46f902457d8, type: 2}
   order: 0
