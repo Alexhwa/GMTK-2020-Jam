@@ -36,6 +36,8 @@ public class BigPaper : LevelElement
     }
 
     public void BeginDrag() {
+        transform.DOKill();
+        transform.DORotate(new Vector3(0, 0, 0), 0.3f).SetEase(Ease.InOutCubic);
         dragOffset = GetMousePoint() - transform.position.ToVector2();
     }
 
