@@ -64,6 +64,7 @@ public class BigPaper : MonoBehaviour
     public void EndDrag() {
         if (isActive && collision.IsColliding && collision.Collider.CompareTag("Out") && isCompleted) {
             PaperSubmitted();
+            collision.Collider.GetComponent<Outbox>().PaperSubmitted(this);
         }
     }
 

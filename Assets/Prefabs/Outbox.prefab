@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95001f32bc4fed448b251088cf6fd6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  submitParticles: {fileID: 55554160110475314, guid: 0990551d202cdde4999803788ff01c46,
+    type: 3}
+  floatingText: {fileID: 7721856645845688551, guid: 92b616748f9f4ca409cca98b52b84c30,
+    type: 3}
 --- !u!61 &3643340572944404535
 BoxCollider2D:
   m_ObjectHideFlags: 0

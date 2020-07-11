@@ -7,9 +7,10 @@ using DG.Tweening;
 public class LevelPlayer : MonoBehaviour
 {
     public PaperSpawner spawner;
+    public CanvasGroup raycastBlocker;
 
     public float levelTime;
-    private float levelTimer;
+    public float levelTimer { get; private set; }
 
     public float TimeRemaining { get { return levelTimer >= 0 ? levelTime - levelTimer : levelTime; }}
 
@@ -26,9 +27,11 @@ public class LevelPlayer : MonoBehaviour
         
         if (levelTimer >= 0 && levelTimer < levelTime) {
             spawner.canSpawn = true;
+            raycastBlocker.blocksRaycasts = false;
         }
         else {
             spawner.canSpawn = false;
+            raycastBlocker.blocksRaycasts = true;
         }
     }
 
