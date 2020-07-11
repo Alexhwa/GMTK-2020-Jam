@@ -71,7 +71,13 @@ public class BigPaper : MonoBehaviour
     }
 
     public void EndDrag() {
-        if (isActive && collision.IsColliding && collision.Collider.CompareTag("Out") && isCompleted) {
+        if (!isActive) {
+            return;
+        }
+
+        transform.position = Utilities.ClampInRect(GetMousePoint() - dragOffset, new Rect(table.bounds.min, table.bounds.size));
+
+        if (collision.IsColliding && collision.Collider.CompareTag("Out") && isCompleted) {
             Outbox outbox = collision.Collider.GetComponent<Outbox>();
             if (outbox.isActive) {
                 outbox.PaperSubmitted(this);

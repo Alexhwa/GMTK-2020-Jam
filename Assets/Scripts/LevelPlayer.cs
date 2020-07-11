@@ -18,6 +18,7 @@ public class LevelPlayer : MonoBehaviour
     public int twoStarThreshold;
     public int threeStarThreshold;
 
+    public bool isActive { get; set; }
     public bool started { get; private set; }
     public bool finished { get; private set; }
 
@@ -35,6 +36,10 @@ public class LevelPlayer : MonoBehaviour
     }
 
     private void Update() {
+        if (!isActive) {
+            return;
+        }
+        
         levelTimer = Mathf.Min(levelTimer + Time.deltaTime, levelTime);
 
         if (!started && levelTimer >= 0) {
