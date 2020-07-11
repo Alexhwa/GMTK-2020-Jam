@@ -45,11 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95001f32bc4fed448b251088cf6fd6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  submitParticles: {fileID: 55554160110475314, guid: 0990551d202cdde4999803788ff01c46,
+  goodSubmitParticles: {fileID: 55554160110475314, guid: 0990551d202cdde4999803788ff01c46,
     type: 3}
-  floatingText: {fileID: 7721856645845688551, guid: 92b616748f9f4ca409cca98b52b84c30,
+  goodFloatingText: {fileID: 7721856645845688551, guid: 92b616748f9f4ca409cca98b52b84c30,
+    type: 3}
+  badSubmitParticles: {fileID: 55554160110475314, guid: 16e37e01db3c51b4a9112f979e9ae9cb,
+    type: 3}
+  badFloatingText: {fileID: 5560196809781430387, guid: ceeb28eb3214cb34e827ca618cfcd06e,
     type: 3}
   submitAudio: {fileID: 8300000, guid: 9f6a6bcdda9c9474d8f6161d2ac516bb, type: 3}
+  failAudio: {fileID: 8300000, guid: 2be083d0bc2a6ab48a0dd39fb9fcb29c, type: 3}
 --- !u!61 &3643340572944404535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.3884778, y: 0}
+  m_Offset: {x: 1.0728915, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -74,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.427905, y: 1.5}
+  m_Size: {x: 4.0590777, y: 1.5}
   m_EdgeRadius: 0
 --- !u!1 &6207581602084364396
 GameObject:

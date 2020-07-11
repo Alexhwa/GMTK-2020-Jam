@@ -11,6 +11,8 @@ public class CheckPaperController : MonoBehaviour
     public List<Image> checkmarks;
     public int requiredCheckmarks;
 
+    public AudioClip scribbleSound;
+
     private void OnEnable() {
         paper.OnTrashed.AddListener(OnPaperTrash);
         paper.OnSubmit.AddListener(OnPaperSubmit);   
@@ -28,6 +30,7 @@ public class CheckPaperController : MonoBehaviour
     }
 
     public void CheckboxClicked(int index) {
+        Managers.AudioManager.PlayOneShot(scribbleSound);
         checkmarks[index].color = checkmarks[index].color.WithAlpha(1);
 
         if (checkmarks.Where(check => check.color.a == 1).Count() >= requiredCheckmarks) {

@@ -18,6 +18,8 @@ public class SignPaperController : MonoBehaviour
     public float requiredDrawDistance;
     public Color completedColor;
 
+    public AudioClip scribbleSound;
+
     private void OnEnable() {
         paper.OnSortToTop.AddListener(OnSort);
         paper.OnDestroyed.AddListener(OnPaperDestroy);
@@ -48,6 +50,8 @@ public class SignPaperController : MonoBehaviour
 
         lineRenderer.positionCount++;
         lineRenderer.SetPosition(lineRenderer.positionCount - 1, lineRenderer.transform.InverseTransformPoint(mousePoint));
+
+        Managers.AudioManager.PlayOneShot(scribbleSound);
     }
 
     public void Drag() {
@@ -60,7 +64,7 @@ public class SignPaperController : MonoBehaviour
         }
 
         drawDistance += (drawPoint - previousDrawPoint).magnitude;
-        if (drawDistance >= requiredDrawDistance) {
+        if (!paper.isCompleted && drawDistance >= requiredDrawDistance) {
             // completed
             paper.PaperCompleted();
             signArea.color = completedColor;

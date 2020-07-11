@@ -82,7 +82,7 @@ public class PaperSpawner : MonoBehaviour
         }
 
         topPaperLayer += 2 * wave.waveSize;
-        nextRepTime += Mathf.Lerp(wave.startSpawnTime, wave.endSpawnTime, (float)currentRep / (wave.repetitions - 1));
+        nextRepTime += Mathf.Lerp(wave.startSpawnTime, wave.endSpawnTime, (float)currentRep / Mathf.Max(1, wave.repetitions - 1));
     }
 
     public bool SortToTop(BigPaper paper) {

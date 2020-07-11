@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Outbox : MonoBehaviour
 {
-    public GameObject submitParticles;
-    public GameObject floatingText;
+    public GameObject goodSubmitParticles;
+    public GameObject goodFloatingText;
+    public GameObject badSubmitParticles;
+    public GameObject badFloatingText;
     public AudioClip submitAudio;
+    public AudioClip failAudio;
 
     public bool isActive { get; private set; }
 
@@ -22,9 +25,16 @@ public class Outbox : MonoBehaviour
     }
 
     public void PaperSubmitted(BigPaper paper) {
-        Instantiate(submitParticles, transform.position, Quaternion.identity);
-        Instantiate(floatingText, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-        Managers.AudioManager.PlayOneShot(submitAudio);
+        if (!paper.isCounterfeit) {
+            Instantiate(goodSubmitParticles, transform.position, Quaternion.identity);
+            Instantiate(goodFloatingText, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            Managers.AudioManager.PlayOneShot(submitAudio);
+        }
+        else {
+            Instantiate(badSubmitParticles, transform.position, Quaternion.identity);
+            Instantiate(badFloatingText, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            Managers.AudioManager.PlayOneShot(failAudio);
+        }
     }
 
 

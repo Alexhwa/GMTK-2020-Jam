@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class TrashBin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject submitParticles;
+    public GameObject floatingText;
+    public AudioClip trashSound;
+    public AudioClip successSound;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Trash(BigPaper paper) {
+        if (!paper.isCounterfeit || paper.isCompleted) {
+            Managers.AudioManager.PlayOneShot(trashSound);
+        }
+        else {
+            Instantiate(submitParticles, transform.position, Quaternion.identity);
+            Instantiate(floatingText, transform.position + new Vector3(0, -1, 0), Quaternion.identity);
+            Managers.AudioManager.PlayOneShot(successSound);
+        }
     }
 }

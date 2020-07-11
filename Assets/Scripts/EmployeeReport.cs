@@ -50,4 +50,13 @@ public class EmployeeReport : MonoBehaviour
         back.DOFade(1, fadeTime);
         (panel.transform as RectTransform).DOAnchorPosY((panel.transform as RectTransform).anchoredPosition.y - panelMoveOffset, fadeTime).SetEase(Ease.OutBack);
     }
+
+
+    public void Quit() {
+        
+    }
+
+    public void Next() {
+
+    }
 }
