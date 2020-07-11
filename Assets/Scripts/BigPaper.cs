@@ -81,7 +81,7 @@ public class BigPaper : MonoBehaviour
             Outbox outbox = collision.Collider.GetComponent<Outbox>();
             if (outbox.isActive) {
                 outbox.PaperSubmitted(this);
-                PaperSubmitted();
+                PaperSubmitted(outbox.transform.right);
             }
         }
     }
@@ -115,14 +115,14 @@ public class BigPaper : MonoBehaviour
         OnComplete?.Invoke();
     }
 
-    public void PaperSubmitted() {
+    public void PaperSubmitted(Vector3 dir) {
         isActive = false;
         isSubmitted = true;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
 
         paperDisappearTween = DOTween.Sequence()
-            .Insert(0, transform.DOMoveX(transform.position.x + 7f, fadeTime).SetEase(Ease.InBack).OnComplete(() => Destroy(gameObject)));
+            .Insert(0, transform.DOMove(transform.position + dir * 7f, fadeTime).SetEase(Ease.InBack).OnComplete(() => Destroy(gameObject)));
 
         OnSubmit?.Invoke();
         OnPaperSubmitted?.Invoke();
