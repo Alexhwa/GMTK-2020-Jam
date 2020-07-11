@@ -13,6 +13,8 @@ public class TimerDisplay : MonoBehaviour
     public Image fillImage;
     public TextMeshProUGUI bigText;
 
+    public AudioClip timeDownAudio;
+
     public float panelOffset;
     private Vector2 panelBasePosition;
 
@@ -58,6 +60,10 @@ public class TimerDisplay : MonoBehaviour
                 Display("Finished !");
             }
             else {
+                if ((int)previousTimeDisplay == 5) {
+                    Managers.AudioManager.PlayOneShot(timeDownAudio);
+                }
+
                 Display("" + (int)previousTimeDisplay);
             }
         }
