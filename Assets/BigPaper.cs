@@ -9,6 +9,7 @@ public class BigPaper : LevelElement
 {
     public bool isActive { get; protected set; }
     public bool isCompleted { get; private set; }
+    public bool isSubmitted { get; private set; }
 
     [Header("Components")]
     public Collision collision;
@@ -21,7 +22,7 @@ public class BigPaper : LevelElement
     public float rotateTo;
     public float scaleTo;
     public Ease ease;
-    protected Tween paperDisappearTween;
+    public Tween paperDisappearTween;
 
     private Vector2 dragOffset;
 
@@ -30,12 +31,29 @@ public class BigPaper : LevelElement
     public static EmptyDelegate OnPaperTrashed;
 
     
-    public void BeginDrag(BaseEventData eventData) {
+    private void Start() {
+        isActive = true;
+    }
+
+    public void BeginDrag() {
         dragOffset = GetMousePoint() - transform.position.ToVector2();
     }
 
-    public void Drag(BaseEventData eventData) {
+    public void Drag() {
         transform.position = GetMousePoint() - dragOffset;
+    }
+
+    public void EndDrag() {
+        if (isActive && collision.IsColliding && collision.Collider.CompareTag("Out") && isCompleted) {
+            PaperSubmitted();
+        }
+    }
+
+
+    private void Update() {
+        if (isActive && collision.IsColliding && collision.Collider.CompareTag("Trash")) {
+            PaperTrashed();
+        }
     }
 
 
@@ -45,6 +63,7 @@ public class BigPaper : LevelElement
 
     public void PaperSubmitted() {
         isActive = false;
+        isSubmitted = true;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
 
