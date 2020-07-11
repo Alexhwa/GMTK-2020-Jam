@@ -48,6 +48,10 @@ public class BigPaper : MonoBehaviour
     }
 
     public void BeginDrag() {
+        if (!isActive) {
+            return;
+        }
+
         SortToTop();
 
         transform.DOKill();
@@ -56,6 +60,10 @@ public class BigPaper : MonoBehaviour
     }
 
     public void Drag() {
+        if (!isActive) {
+            return;
+        }
+
         SortToTop();
 
         transform.position = GetMousePoint() - dragOffset;
@@ -64,6 +72,7 @@ public class BigPaper : MonoBehaviour
     public void EndDrag() {
         if (isActive && collision.IsColliding && collision.Collider.CompareTag("Out") && isCompleted) {
             PaperSubmitted();
+            collision.Collider.GetComponent<Outbox>().PaperSubmitted(this);
         }
     }
 
@@ -103,9 +112,7 @@ public class BigPaper : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
 
         paperDisappearTween = DOTween.Sequence()
-            .Insert(0, canvasGroup.DOFade(0, fadeTime).OnComplete(() => Destroy(gameObject)))
-            .Insert(0, transform.DORotate(new Vector3(0, 0, rotateTo), fadeTime).SetEase(ease))
-            .Insert(0, transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
+            .Insert(0, transform.DOMoveX(transform.position.x + 7f, fadeTime).SetEase(Ease.InBack).OnComplete(() => Destroy(gameObject)));
 
         OnSubmit?.Invoke();
         OnPaperSubmitted?.Invoke();

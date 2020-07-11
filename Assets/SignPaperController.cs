@@ -21,14 +21,12 @@ public class SignPaperController : MonoBehaviour
     private void OnEnable() {
         paper.OnSortToTop.AddListener(OnSort);
         paper.OnDestroyed.AddListener(OnPaperDestroy);
-        paper.OnTrashed.AddListener(OnPaperTrash);
-        paper.OnSubmit.AddListener(OnPaperSubmit);   
+        paper.OnTrashed.AddListener(OnPaperTrash);   
     }
     private void OnDisable() {
         paper.OnSortToTop.RemoveListener(OnSort);
         paper.OnDestroyed.RemoveListener(OnPaperDestroy);
         paper.OnTrashed.RemoveListener(OnPaperTrash);
-        paper.OnSubmit.RemoveListener(OnPaperSubmit);  
     }
 
     private void Start() {
@@ -75,10 +73,6 @@ public class SignPaperController : MonoBehaviour
     }
 
     private void OnPaperTrash() {
-        (paper.paperDisappearTween as Sequence)
-            .Insert(0, lineRenderer.DOColor(new Color2(), new Color2(), paper.fadeTime).OnComplete(() => Destroy(lineRenderer.gameObject)));
-    }
-    private void OnPaperSubmit() {
         (paper.paperDisappearTween as Sequence)
             .Insert(0, lineRenderer.DOColor(new Color2(), new Color2(), paper.fadeTime).OnComplete(() => Destroy(lineRenderer.gameObject)));
     }
