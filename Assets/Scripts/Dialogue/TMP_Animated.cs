@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 namespace TMPro
 {
+    public enum Emotion { happy, sad, suprised, angry };
+    [System.Serializable] public class EmotionEvent : UnityEvent<Emotion> { }
+
     [System.Serializable] public class ActionEvent : UnityEvent<string> { }
 
     [System.Serializable] public class TextRevealEvent : UnityEvent<char> { }
@@ -15,6 +18,7 @@ namespace TMPro
     {
 
         [SerializeField] private float speed = 10;
+        public EmotionEvent onEmotionChange;
         public ActionEvent onAction;
         public TextRevealEvent onTextReveal;
         public DialogueEvent onDialogueFinish;
@@ -83,6 +87,10 @@ namespace TMPro
                         else if (tag.StartsWith("pause="))
                         {
                             return new WaitForSeconds(float.Parse(tag.Split('=')[1]));
+                        }
+                        else if (tag.StartsWith("emotion="))
+                        {
+                            onEmotionChange.Invoke((Emotion)System.Enum.Parse(typeof(Emotion), tag.Split('=')[1]));
                         }
                         else if (tag.StartsWith("action="))
                         {

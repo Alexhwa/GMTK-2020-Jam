@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class InterfaceManager : MonoBehaviour
 {
+    
     public void ActivateDialogue(int id)
     {
 

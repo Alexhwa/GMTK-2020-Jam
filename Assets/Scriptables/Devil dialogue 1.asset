@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e24092d584d5648b17fd5779c32c2a, type: 3}
   m_Name: Devil dialogue 1
   m_EditorClassIdentifier: 
-  conversationBlock: []
+  conversationBlock:
+  - First day on the job, huh?
+  - 'Don''t worry. You get used to the constant feeling of agony. '
+  - 'Just don''t get on the boss''s bad side.  '

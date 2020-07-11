@@ -8,5 +8,7 @@ public class CharacterData : ScriptableObject
     public string characterName;
     public Color characterColor;
     public Color characterNameColor;
-    public DialogueData dialogue;
+    public Sprite neutralSprite;
+    public Sprite worriedSprite;
+    public Sprite suprisedSprite;
 }
