@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 5e807e7664187aa4f836a5fc78e73886
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Steinem
+  fontNames:
+  - Steinem
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: adc09bc5beec3ff4987ee36c11ce34ca, type: 3}
+  - {fileID: 12800000, guid: bc9d161d6063c7844ba176f616dc0684, type: 3}
+  - {fileID: 12800000, guid: 337cddde0dfab50468da576a8e5504f3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
