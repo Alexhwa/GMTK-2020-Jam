@@ -249,7 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bb8d7eb268d6345a71a577b88170dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelRunner: {fileID: 0}
+  lifeTime: 30
+  paperSpawner: {fileID: 0}
   collision: {fileID: 6030620509014229735}
   canvasGroup: {fileID: 6030620509128520620}
   canvas: {fileID: 6030620509014229728}
@@ -257,6 +258,21 @@ MonoBehaviour:
   rotateTo: -70
   scaleTo: 0.2
   ease: 5
+  OnSortToTop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSubmit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTrashed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &6030620509014229734
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 4517358791129481149}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1424, y: -1.79}
-  m_SizeDelta: {x: -3.4894524, y: -4.490191}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1424, y: -1.783}
+  m_SizeDelta: {x: 0.8, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &88996993
 CanvasRenderer:
@@ -136,10 +136,10 @@ RectTransform:
   m_Father: {fileID: 4517358791129481149}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1424, y: -1.14}
-  m_SizeDelta: {x: -3.4894524, y: -4.490191}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1424, y: -1.1399999}
+  m_SizeDelta: {x: 0.8, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &189050225
 CanvasRenderer:
@@ -239,10 +239,10 @@ RectTransform:
   m_Father: {fileID: 4517358791129481149}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1424, y: -0.48}
-  m_SizeDelta: {x: -3.4894524, y: -4.490191}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1424, y: -0.48000002}
+  m_SizeDelta: {x: 0.8, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &384392209
 CanvasRenderer:
@@ -342,10 +342,10 @@ RectTransform:
   m_Father: {fileID: 4517358791129481149}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.1424, y: 0.1648}
-  m_SizeDelta: {x: -3.4894524, y: -4.490191}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1424, y: 0.169}
+  m_SizeDelta: {x: 0.8, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2026287441
 CanvasRenderer:
@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 6030620509014229732, guid: 91955206853e231438dd714bf793d6f8,
         type: 3}
       propertyPath: m_Name
-      value: Survey
+      value: Survey Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6030620509128520623, guid: 91955206853e231438dd714bf793d6f8,
         type: 3}

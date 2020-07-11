@@ -11,12 +11,12 @@ public class CheckPaperController : MonoBehaviour
     public List<Image> checkmarks;
 
     private void OnEnable() {
-        BigPaper.OnPaperTrashed += OnPaperTrash;
-        BigPaper.OnPaperSubmit += OnPaperSubmit;   
+        paper.OnTrashed.AddListener(OnPaperTrash);
+        paper.OnSubmit.AddListener(OnPaperSubmit);   
     }
     private void OnDisable() {
-        BigPaper.OnPaperTrashed -= OnPaperTrash;
-        BigPaper.OnPaperSubmit -= OnPaperSubmit;
+        paper.OnTrashed.RemoveListener(OnPaperTrash);
+        paper.OnSubmit.RemoveListener(OnPaperSubmit);  
     }
 
 
@@ -37,19 +37,15 @@ public class CheckPaperController : MonoBehaviour
 
 
     private void OnPaperTrash() {
-        if (!paper.isActive) {
-            foreach (Image check in checkmarks) {
-                (paper.paperDisappearTween as Sequence)
-                    .Insert(0, check.DOFade(0, paper.fadeTime));
-            }
+        foreach (Image check in checkmarks) {
+            (paper.paperDisappearTween as Sequence)
+                .Insert(0, check.DOFade(0, paper.fadeTime));
         }
     }
     private void OnPaperSubmit() {
-        if (paper.isSubmitted) {
-            foreach (Image check in checkmarks) {
-                (paper.paperDisappearTween as Sequence)
-                    .Insert(0, check.DOFade(0, paper.fadeTime));
-            }
+        foreach (Image check in checkmarks) {
+            (paper.paperDisappearTween as Sequence)
+                .Insert(0, check.DOFade(0, paper.fadeTime));
         }
     }
 }

@@ -19,12 +19,16 @@ public class SignPaperController : MonoBehaviour
     public Color completedColor;
 
     private void OnEnable() {
-        BigPaper.OnPaperTrashed += OnPaperTrash;
-        BigPaper.OnPaperSubmit += OnPaperSubmit;   
+        paper.OnSortToTop.AddListener(OnSort);
+        paper.OnDestroyed.AddListener(OnPaperDestroy);
+        paper.OnTrashed.AddListener(OnPaperTrash);
+        paper.OnSubmit.AddListener(OnPaperSubmit);   
     }
     private void OnDisable() {
-        BigPaper.OnPaperTrashed -= OnPaperTrash;
-        BigPaper.OnPaperSubmit -= OnPaperSubmit;
+        paper.OnSortToTop.RemoveListener(OnSort);
+        paper.OnDestroyed.RemoveListener(OnPaperDestroy);
+        paper.OnTrashed.RemoveListener(OnPaperTrash);
+        paper.OnSubmit.RemoveListener(OnPaperSubmit);  
     }
 
     private void Start() {
@@ -66,16 +70,19 @@ public class SignPaperController : MonoBehaviour
     }
 
 
+    private void OnSort() {
+        lineRenderer.sortingOrder = paper.canvas.sortingOrder + 1;
+    }
+
     private void OnPaperTrash() {
-        if (!paper.isActive) {
-            (paper.paperDisappearTween as Sequence)
-                .Insert(0, lineRenderer.DOColor(new Color2(), new Color2(), paper.fadeTime).OnComplete(() => Destroy(lineRenderer.gameObject)));
-        }
+        (paper.paperDisappearTween as Sequence)
+            .Insert(0, lineRenderer.DOColor(new Color2(), new Color2(), paper.fadeTime).OnComplete(() => Destroy(lineRenderer.gameObject)));
     }
     private void OnPaperSubmit() {
-        if (paper.isSubmitted) {
-            (paper.paperDisappearTween as Sequence)
-                .Insert(0, lineRenderer.DOColor(new Color2(), new Color2(), paper.fadeTime).OnComplete(() => Destroy(lineRenderer.gameObject)));
-        }
+        (paper.paperDisappearTween as Sequence)
+            .Insert(0, lineRenderer.DOColor(new Color2(), new Color2(), paper.fadeTime).OnComplete(() => Destroy(lineRenderer.gameObject)));
+    }
+    private void OnPaperDestroy() {
+        Destroy(lineRenderer.gameObject);
     }
 }

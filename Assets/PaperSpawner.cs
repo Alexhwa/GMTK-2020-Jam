@@ -43,6 +43,9 @@ public class PaperSpawner : MonoBehaviour
             canvas.worldCamera = cam;
             canvas.sortingOrder = 2 * i + topPaperLayer;
 
+            BigPaper paper = paperObj.GetComponent<BigPaper>();
+            paper.paperSpawner = this;
+
             paperObj.transform.DOMove(
                 spawnRegion.min + new Vector2(Random.Range(0, spawnRegion.size.x), Random.Range(0, spawnRegion.size.y)), moveTime
             ).SetEase(Ease.OutQuad);
@@ -52,6 +55,18 @@ public class PaperSpawner : MonoBehaviour
         }
 
         topPaperLayer += 2 * waveSize;
+    }
+
+    public bool SortToTop(BigPaper paper) {
+        if (paper.canvas.sortingOrder == topPaperLayer - 2) {
+            return false;
+        }
+
+        Debug.Log("Sort " + paper + " to top");
+        paper.canvas.sortingOrder = topPaperLayer;
+        topPaperLayer += 2;
+        
+        return true;
     }
 
 

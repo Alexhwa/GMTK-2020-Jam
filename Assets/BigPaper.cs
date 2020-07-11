@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using DG.Tweening;
 
-public class BigPaper : LevelElement
+public class BigPaper : MonoBehaviour
 {
     public bool isActive { get; protected set; }
     public bool isCompleted { get; private set; }
     public bool isSubmitted { get; private set; }
+
+    public float lifeTime;
+    private float aliveTimer;
+
+    [HideInInspector] public PaperSpawner paperSpawner;
 
     [Header("Components")]
     public Collision collision;
@@ -26,9 +31,11 @@ public class BigPaper : LevelElement
 
     private Vector2 dragOffset;
 
-    public static EmptyDelegate OnPaperComplete;
-    public static EmptyDelegate OnPaperSubmit;
-    public static EmptyDelegate OnPaperTrashed;
+    public UnityEvent OnSortToTop;
+    public UnityEvent OnComplete;
+    public UnityEvent OnSubmit;
+    public UnityEvent OnTrashed;
+    public UnityEvent OnDestroyed;
 
     
     private void Start() {
@@ -36,12 +43,16 @@ public class BigPaper : LevelElement
     }
 
     public void BeginDrag() {
+        SortToTop();
+
         transform.DOKill();
         transform.DORotate(new Vector3(0, 0, 0), 0.3f).SetEase(Ease.InOutCubic);
         dragOffset = GetMousePoint() - transform.position.ToVector2();
     }
 
     public void Drag() {
+        SortToTop();
+
         transform.position = GetMousePoint() - dragOffset;
     }
 
@@ -56,11 +67,25 @@ public class BigPaper : LevelElement
         if (isActive && collision.IsColliding && collision.Collider.CompareTag("Trash")) {
             PaperTrashed();
         }
+
+        aliveTimer += Time.deltaTime;
+        if (aliveTimer >= lifeTime) {
+            PaperDestroy();
+        }
+
+        if (lifeTime - aliveTimer < 1f) {
+            canvasGroup.alpha = (lifeTime - aliveTimer) % 0.1f < 0.05f ? 1 : 0.7f;
+        }
+        else if (isActive) {
+            canvasGroup.alpha = 1;
+        }
     }
 
 
     public virtual void PaperCompleted() {
         isCompleted = true;
+
+        OnComplete?.Invoke();
     }
 
     public void PaperSubmitted() {
@@ -74,7 +99,7 @@ public class BigPaper : LevelElement
             .Insert(0, transform.DORotate(new Vector3(0, 0, rotateTo), fadeTime).SetEase(ease))
             .Insert(0, transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
 
-        OnPaperSubmit?.Invoke();
+        OnSubmit?.Invoke();
     }
 
     public void PaperTrashed() {
@@ -87,7 +112,23 @@ public class BigPaper : LevelElement
             .Insert(0, transform.DORotate(new Vector3(0, 0, rotateTo), fadeTime).SetEase(ease))
             .Insert(0, transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
 
-        OnPaperTrashed?.Invoke();
+        OnTrashed?.Invoke();
+    }
+
+    public void PaperDestroy() {
+        isActive = false;
+
+        OnDestroyed?.Invoke();
+        Destroy(gameObject);
+    }
+
+
+    public void SortToTop() {
+        if (paperSpawner.SortToTop(this)) {
+            OnSortToTop?.Invoke();
+
+            aliveTimer = 0;
+        }
     }
 
 
