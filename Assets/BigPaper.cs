@@ -24,8 +24,11 @@ public class BigPaper : LevelElement
 
 
 
-    protected virtual void PaperCompleted() {
+    public virtual void PaperCompleted() {
         isActive = false;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
+
         paperDisappearTween = DOTween.Sequence()
             .Insert(0, canvasGroup.DOFade(0, fadeTime).OnComplete(() => Destroy(gameObject)))
             .Insert(0, transform.DORotate(new Vector3(0, 0, rotateTo), fadeTime).SetEase(ease))
