@@ -65,15 +65,25 @@ public class LevelPlayer : MonoBehaviour
 
     private void OnEnable() {
         BigPaper.OnPaperSubmitted += PaperSubmitted;
+        BigPaper.OnPaperTrashed += PaperTrashed;
     }
 
     private void OnDisable() {
         BigPaper.OnPaperSubmitted -= PaperSubmitted;
+        BigPaper.OnPaperTrashed -= PaperTrashed;
     }
 
 
-    private void PaperSubmitted() {
-        score++;
+    private void PaperSubmitted(BigPaper paper) {
+        if (!paper.isCounterfeit)
+            score++;
+        else
+            score--;
+    }
+
+    private void PaperTrashed(BigPaper paper) {
+        if (paper.isCounterfeit && !paper.isCompleted)
+            score++;
     }
 
 

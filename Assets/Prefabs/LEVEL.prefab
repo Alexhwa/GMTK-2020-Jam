@@ -2437,7 +2437,8 @@ MonoBehaviour:
   slider: {fileID: 1477180812559575429}
   fillImage: {fileID: 1477180811203547409}
   bigText: {fileID: 1477180812847247609}
-  timeDownAudio: {fileID: 8300000, guid: b6d58aed8ee60ce49b51361474eaaac2, type: 3}
+  timeBuildAudio: {fileID: 8300000, guid: 7c3da121138a02d48bff691806e90d9d, type: 3}
+  timeUpAudio: {fileID: 8300000, guid: 0fc45624d3e661646a5af840f88f4e15, type: 3}
   panelOffset: 65
   baseColor: {r: 0.5254902, g: 1, b: 0.564218, a: 1}
   fullHue: 125
@@ -2493,6 +2494,7 @@ MonoBehaviour:
   oneStarThreshold: 5
   twoStarThreshold: 12
   threeStarThreshold: 20
+  shouldAudioPitch: 1
   score: 0
 --- !u!1 &1477180812603500447
 GameObject:

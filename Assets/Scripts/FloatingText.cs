@@ -11,6 +11,8 @@ public class FloatingText : MonoBehaviour
     public float fadeTime;
     public TMPro.TMP_Text text;
 
+    public bool floatUp = true;
+
     private float aliveTimer;
     private Tween fadeTween;
 
@@ -24,7 +26,7 @@ public class FloatingText : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        transform.position += Vector3.up * floatSpeed * Time.fixedDeltaTime;
+        transform.position += Vector3.up * floatSpeed * Time.fixedDeltaTime * (floatUp ? 1 : -1);
 
         aliveTimer += Time.fixedDeltaTime;
         if (fadeTween == null && aliveTimer >= lifeTime - fadeTime - 0.1f) {

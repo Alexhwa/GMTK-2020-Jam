@@ -13,7 +13,8 @@ public class TimerDisplay : MonoBehaviour
     public Image fillImage;
     public TextMeshProUGUI bigText;
 
-    public AudioClip timeDownAudio;
+    public AudioClip timeBuildAudio;
+    public AudioClip timeUpAudio;
 
     public float panelOffset;
     private Vector2 panelBasePosition;
@@ -57,11 +58,12 @@ public class TimerDisplay : MonoBehaviour
             previousTimeDisplay = Mathf.Ceil(levelPlayer.TimeRemaining);
 
             if (previousTimeDisplay == 0) {
+                Managers.AudioManager.PlayOneShot(timeUpAudio);
                 Display("Finished !");
             }
             else {
                 if ((int)previousTimeDisplay == 5) {
-                    Managers.AudioManager.PlayOneShot(timeDownAudio);
+                    Managers.AudioManager.PlayOneShot(timeBuildAudio);
                 }
 
                 Display("" + (int)previousTimeDisplay);

@@ -11,8 +11,12 @@ public class BigPaper : MonoBehaviour
     public bool isCompleted { get; private set; }
     public bool isSubmitted { get; private set; }
 
+    public bool isCounterfeit;
+
     public float lifeTime;
     private float aliveTimer;
+
+    public AudioClip completedSound;
 
     [HideInInspector] public PaperSpawner paperSpawner;
     public Collider2D table;
@@ -41,7 +45,10 @@ public class BigPaper : MonoBehaviour
     public UnityEvent OnSubmit;
     public UnityEvent OnTrashed;
     public UnityEvent OnDestroyed;
-    public static EmptyDelegate OnPaperSubmitted;
+
+    public delegate void PaperDelegate(BigPaper paper);
+    public static PaperDelegate OnPaperTrashed;
+    public static PaperDelegate OnPaperSubmitted;
 
     
     private void Start() {
@@ -89,6 +96,7 @@ public class BigPaper : MonoBehaviour
 
     private void Update() {
         if (isActive && collision.IsColliding && collision.Collider.CompareTag("Trash")) {
+            collision.Collider.GetComponent<TrashBin>().Trash(this);
             PaperTrashed();
         }
 
@@ -112,6 +120,8 @@ public class BigPaper : MonoBehaviour
         sheenRect.DOAnchorPosY(sheenRect.anchoredPosition.y - sheenMoveAmount, completeTime).SetEase(Ease.InOutQuad);
         completeBorder.DOFade(1, completeTime).SetEase(Ease.InOutQuad);
 
+        Managers.AudioManager.PlayOneShot(completedSound);
+
         OnComplete?.Invoke();
     }
 
@@ -125,7 +135,7 @@ public class BigPaper : MonoBehaviour
             .Insert(0, transform.DOMove(transform.position + dir * 7f, fadeTime).SetEase(Ease.InBack).OnComplete(() => Destroy(gameObject)));
 
         OnSubmit?.Invoke();
-        OnPaperSubmitted?.Invoke();
+        OnPaperSubmitted?.Invoke(this);
     }
 
     public void PaperTrashed() {
@@ -139,6 +149,7 @@ public class BigPaper : MonoBehaviour
             .Insert(0, transform.DOScale(new Vector3(scaleTo, scaleTo, 1), fadeTime).SetEase(ease));
 
         OnTrashed?.Invoke();
+        OnPaperTrashed?.Invoke(this);
     }
 
     public void PaperDestroy() {

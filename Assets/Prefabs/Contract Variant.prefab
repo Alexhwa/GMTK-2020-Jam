@@ -137,6 +137,7 @@ MonoBehaviour:
   previousDrawPoint: {x: 0, y: 0}
   requiredDrawDistance: 7
   completedColor: {r: 0.6084906, g: 1, b: 0.6583357, a: 0.4745098}
+  scribbleSound: {fileID: 8300000, guid: d284e8f11c4a204438258d40cb011502, type: 3}
 --- !u!1001 &2609200505369335869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,12 +294,12 @@ PrefabInstance:
     - target: {fileID: 7150654749069249245, guid: 91955206853e231438dd714bf793d6f8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7989662136721790956, guid: 91955206853e231438dd714bf793d6f8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91955206853e231438dd714bf793d6f8, type: 3}
