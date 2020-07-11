@@ -10,6 +10,7 @@ TagManager:
   - Conveyor
   - Out
   - Trash
+  - Stampable
   layers:
   - Default
   - TransparentFX
