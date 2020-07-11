@@ -20,6 +20,10 @@ public class LevelPlayer : MonoBehaviour
     int score = 0;
 
 
+    private void Awake() {
+        spawner.levelPlayer = this;    
+    }
+
     private void Start() {
         levelTimer = -3;
     }
@@ -31,14 +35,7 @@ public class LevelPlayer : MonoBehaviour
             TimeOver();
         }
         
-        if (levelTimer >= 0 && levelTimer < levelTime) {
-            spawner.canSpawn = true;
-            raycastBlocker.blocksRaycasts = false;
-        }
-        else {
-            spawner.canSpawn = false;
-            raycastBlocker.blocksRaycasts = true;
-        }
+        raycastBlocker.blocksRaycasts = !spawner.canSpawn;
     }
 
     private void OnEnable() {

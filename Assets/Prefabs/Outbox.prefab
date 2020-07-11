@@ -49,6 +49,7 @@ MonoBehaviour:
     type: 3}
   floatingText: {fileID: 7721856645845688551, guid: 92b616748f9f4ca409cca98b52b84c30,
     type: 3}
+  submitAudio: {fileID: 8300000, guid: 9f6a6bcdda9c9474d8f6161d2ac516bb, type: 3}
 --- !u!61 &3643340572944404535
 BoxCollider2D:
   m_ObjectHideFlags: 0

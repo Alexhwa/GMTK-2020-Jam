@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772dd788a602cce44946107f0d14aaf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmAudio: {fileID: 435132864957655436}
+  sfxAudio: {fileID: 435132864957655439}
 --- !u!82 &435132864957655436
 AudioSource:
   m_ObjectHideFlags: 0
