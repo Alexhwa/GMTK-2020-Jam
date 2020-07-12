@@ -27,7 +27,7 @@ public class MenuPaperController : MonoBehaviour
     }
 
     public void NewGame() {
-
+        Managers.ScenesManager.LoadNextLevel();
     }
 
     public void ContinueGame() {
