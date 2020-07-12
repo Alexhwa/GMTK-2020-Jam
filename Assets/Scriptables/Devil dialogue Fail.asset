@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Devil dialogue Fail
   m_EditorClassIdentifier: 
   conversationBlock:
-  - '<pause=.9>Oof. That looked rough.</size> '
-  - <size=34>I still don't get why we have printers hooked up directly to all of
-    our desks.</size>
-  - <size=34>Well anyways, don't look too down.</size>
+  - '<pause=.9><emotion=suprised> That looked rough.</size> '
+  - <size=34><emotion=worried>I still don't get why we have printers hooked up directly
+    to all of our desks.</size>
+  - <size=34><emotion=neutral>Well anyways, don't look too down.</size>
   - <size=34>You'll get it next time, champ.</size>
   - 
   character: {fileID: 11400000, guid: 10f6fd8d11d9f18449efee060bc51147, type: 2}
