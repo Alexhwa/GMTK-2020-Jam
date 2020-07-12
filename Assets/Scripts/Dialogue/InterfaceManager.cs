@@ -32,6 +32,7 @@ public class InterfaceManager : MonoBehaviour
     public DialogueEndEvent onDialogueEnd;
 
     public CharacterScript charScript;
+    public GraphicRaycaster raycast;
 
     public float minVoiceGap = .1f;
     public float maxVoiceGapVariance = .05f;
@@ -71,6 +72,7 @@ public class InterfaceManager : MonoBehaviour
     {
         
         animatedText.text = string.Empty;
+        raycast.enabled = true;
         inDialogue = true;
         canExit = false;
         dialogueFinished = false;
@@ -101,7 +103,7 @@ public class InterfaceManager : MonoBehaviour
         Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(startPos, 1f)).SetEase(Ease.InCubic);
         s.target = dialogueUI.transform;
         dimScreen.GetComponent<CanvasGroup>().DOFade(0, .7f);
-
+        raycast.enabled = false;
     }
 
     public void FinishDialogue()

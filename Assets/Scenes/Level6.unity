@@ -720,7 +720,7 @@ PrefabInstance:
     - target: {fileID: 1477180812730564827, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -197.00002
+      value: -196.99998
       objectReference: {fileID: 0}
     - target: {fileID: 1477180812757295144, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
@@ -892,6 +892,12 @@ PrefabInstance:
       propertyPath: levelDialogue.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: ce6e0700fafb7f2448f8c5196109a97e,
+        type: 2}
+    - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: levelDialogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 18e9e6830c3644c449a430cff8ea77e9,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82c4c68b988567047b3438f9903e839d, type: 3}
