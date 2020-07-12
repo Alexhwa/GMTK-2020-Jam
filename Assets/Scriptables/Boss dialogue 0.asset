@@ -18,6 +18,6 @@ MonoBehaviour:
     me.</size>
   - <size=34>I bet you think filing paperwork is aaallllllll fun and games, but you
     better get your efficiency up or it's the ravine for you</size>
-  - '<size=34>I''ll see you tomorrow, <size=50>ROOKIE!</size> Get going...  '
+  - <size=34>I'll see you tomorrow, <size=50>ROOKIE!</size> Get going...  </size>
   - 
   character: {fileID: 11400000, guid: 10f6fd8d11d9f18449efee060bc51147, type: 2}

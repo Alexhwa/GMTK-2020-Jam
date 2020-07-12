@@ -17,7 +17,7 @@ MonoBehaviour:
   characterNameColor: {r: 1, g: 0.8277145, b: 0.0047169924, a: 1}
   neutralSprite: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372, type: 3}
   worriedSprite: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372, type: 3}
-  suprisedSprite: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372, type: 3}
+  suprisedSprite: {fileID: 21300000, guid: 04b8468c9a46f4644a39da7368af7fb9, type: 3}
   charVoice:
   - {fileID: 8300000, guid: d7e5ecf6e0473e9459fa7dde642da7e7, type: 3}
   - {fileID: 8300000, guid: 8ef90f54f5848ea4bb3a8c8d24fb73f6, type: 3}
