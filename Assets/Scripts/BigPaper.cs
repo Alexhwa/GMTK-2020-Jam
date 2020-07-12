@@ -16,6 +16,7 @@ public class BigPaper : MonoBehaviour
     public float lifeTime;
     private float aliveTimer;
 
+    public AudioClip grabSound;
     public AudioClip completedSound;
 
     [HideInInspector] public PaperSpawner paperSpawner;
@@ -61,6 +62,7 @@ public class BigPaper : MonoBehaviour
         }
 
         SortToTop();
+        Managers.AudioManager.PlayOneShot(grabSound);
 
         transform.DOKill();
         transform.DORotate(new Vector3(0, 0, 0), 0.3f).SetEase(Ease.InOutCubic);
