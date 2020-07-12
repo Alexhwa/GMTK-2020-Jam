@@ -497,7 +497,7 @@ PrefabInstance:
     - target: {fileID: 1477180812730564827, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -197.00008
+      value: -197.00006
       objectReference: {fileID: 0}
     - target: {fileID: 1477180812757295144, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
@@ -794,7 +794,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelDialogue.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: d01f78ef62158634cb6fbddc04bda948,
+      objectReference: {fileID: 11400000, guid: df67f4c0f3bc8ac48acf87ad98ad1eaa,
         type: 2}
     - target: {fileID: 8546162309697475204, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
