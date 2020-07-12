@@ -141,7 +141,15 @@ public class InterfaceManager : MonoBehaviour
         string punctuation = ",.:!?/-=;'";
         if (punctuation.Contains(c.ToString()))
         {
-            //currentDialogue.character.punc
+            audioManager.PlayOneShot(currentDialogue.character.punctuationVoice);
+        }
+        else
+        {
+            if (Random.Range(0, 1.0f) < .3f)
+            {
+                var chosenClip = currentDialogue.character.charVoice[Random.Range(0, currentDialogue.character.charVoice.Length)];
+                audioManager.PlayOneShot(chosenClip);
+            }
         }
     }
 }
