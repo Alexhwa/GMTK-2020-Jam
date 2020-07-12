@@ -7,6 +7,7 @@ using TMPro;
 
 public class ExplainPanel : MonoBehaviour
 {
+    public TextMeshProUGUI dayText;
     public TextMeshProUGUI scoreText;
     public LevelPlayer levelPlayer;
 
@@ -19,6 +20,7 @@ public class ExplainPanel : MonoBehaviour
     public InterfaceManager interfaceManager;
 
     private void Start() {
+        dayText.text = "Day " + (Managers.ScenesManager.sceneBuildIndex - Managers.ScenesManager.firstLevelBuildIndex + 1);
         scoreText.text = "Target Score: " + levelPlayer.threeStarThreshold;
         interfaceManager.onDialogueEnd.AddListener(() => ActivateHelpBox());
     }

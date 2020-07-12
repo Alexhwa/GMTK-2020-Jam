@@ -7,7 +7,7 @@ public class ScenesManager : MonoBehaviour
 {
     public Camera cam { get; private set; }
     public bool isTransitioning;
-    private int sceneBuildIndex;
+    public int sceneBuildIndex { get; private set; }
 
     public Animator faderAnimator;
 
