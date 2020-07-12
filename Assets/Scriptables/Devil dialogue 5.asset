@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e24092d584d5648b17fd5779c32c2a, type: 3}
   m_Name: Devil dialogue 5
   m_EditorClassIdentifier: 
-  conversationBlock: []
+  conversationBlock:
+  - <pause=.9>So they just bombarded you with letters today, didn't they?
+  - They actually put text on these letters<speed=5>...
+  - <speed=5>...<speed=55>it seems that printing rectangles on paper where text should
+    be is bad business practice.
+  - 
   character: {fileID: 11400000, guid: 6a292f240b6f7824f8b0a46f902457d8, type: 2}
