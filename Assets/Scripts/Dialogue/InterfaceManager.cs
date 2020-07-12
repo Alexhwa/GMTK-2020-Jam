@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 public class InterfaceManager : MonoBehaviour
 {
     private int timesDialogueActivated = 0;
-    private bool inDialogue;
+
     public GameObject dialogueUI;
+    public GameObject dimScreen; 
+
     public TMP_Animated animatedText;
     public DialogueData[] levelDialogue;
 
@@ -16,9 +19,14 @@ public class InterfaceManager : MonoBehaviour
     private int dialogueIndex;
     public bool canExit;
     public bool nextDialogue;
+    private bool inDialogue;
+    private bool dialogueFinished;
 
     private string dialogueStartPauseTxt = "<pause=.9>";
     private Vector2 startPos;
+
+    [System.Serializable] public class DialogueEndEvent : UnityEvent { }
+    public DialogueEndEvent onDialogueEnd;
 
     private void Start()
     {
@@ -28,19 +36,19 @@ public class InterfaceManager : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && inDialogue)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && inDialogue && dialogueFinished)
         {
             if (canExit)
             {
                 Sequence s = DOTween.Sequence();
                 s.AppendInterval(.8f);
-                print("Dialogue finished");
+                print("Dialogue ");
             }
 
             if (nextDialogue)
             {
                 animatedText.ReadText(currentDialogue.conversationBlock[dialogueIndex]);
-                print("Dialogue progressed");
+                dialogueFinished = false;
             }
         }
     }
@@ -50,8 +58,8 @@ public class InterfaceManager : MonoBehaviour
         animatedText.text = string.Empty;
         inDialogue = true;
         canExit = false;
-        
-        if(timesDialogueActivated >= levelDialogue.Length)
+        dialogueFinished = false;
+        if (timesDialogueActivated >= levelDialogue.Length)
         {
             timesDialogueActivated = levelDialogue.Length - 1;
         }
@@ -59,20 +67,22 @@ public class InterfaceManager : MonoBehaviour
         ActivateUI();
         AdjustDialogueData(currentDialogue);
         dialogueUI.transform.DOKill();
-        Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 20), .7f)).SetEase(currentDialogue.ease);
+        Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 20), 1f).SetEase(currentDialogue.ease));
         s.target = dialogueUI.transform;
         animatedText.ReadText(currentDialogue.conversationBlock[dialogueIndex]);
-        print("Dialogue activated");
         
     }
     private void ActivateUI()
     {
         dialogueUI.SetActive(true);
-
+        dimScreen.GetComponent<CanvasGroup>().DOFade(1, .7f);
     }
     private void DeactivateUI()
     {
-        Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(startPos, .7f)).SetEase(Ease.OutBack);
+        Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(startPos, 1f)).SetEase(Ease.InCubic);
+        s.target = dialogueUI.transform;
+        dimScreen.GetComponent<CanvasGroup>().DOFade(0, .7f);
+
     }
 
     public void FinishDialogue()
@@ -81,6 +91,7 @@ public class InterfaceManager : MonoBehaviour
         {
             dialogueIndex++;
             nextDialogue = true;
+            dialogueFinished = true;
         }
         else
         {
@@ -89,6 +100,7 @@ public class InterfaceManager : MonoBehaviour
             inDialogue = false;
             timesDialogueActivated++;
             dialogueIndex = 0;
+            onDialogueEnd.Invoke();
             DeactivateUI();
         }
     }

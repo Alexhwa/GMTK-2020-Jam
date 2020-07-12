@@ -35,7 +35,6 @@ public class LevelRunner : MonoBehaviour
         Paper.OnPaperShred -= PaperDestroyed;
     }
 
-
     private void Update() {
         if (isTimePaused) {
             return;
