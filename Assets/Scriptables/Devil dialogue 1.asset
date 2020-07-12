@@ -16,7 +16,7 @@ MonoBehaviour:
   - <pause=.9>Wow. You made it through your first day.
   - '<emotion=sad>My first day here, they threw me in a ravine after I misfiled some
     paperwork. '
-  - <emotion=neutral>Well, in any case, good job. I doubt the boss is gonna be too
-    pleased with how smoothly your day went though.
+  - <emotion=neutral>Well, in any case, good luck. I doubt the boss is gonna be too
+    pleased with how smoothly your day went.
+  - 
   character: {fileID: 11400000, guid: 6a292f240b6f7824f8b0a46f902457d8, type: 2}
-  ease: 9
