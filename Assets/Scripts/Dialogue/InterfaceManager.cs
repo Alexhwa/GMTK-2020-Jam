@@ -61,7 +61,7 @@ public class InterfaceManager : MonoBehaviour
                 dialogueFinished = false;
             }
         }
-        else if((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && inDialogue && !dialogueFinished)
+        else if((Input.GetKey(KeyCode.Space) || Input.GetMouseButtonDown(0)) && inDialogue && !dialogueFinished)
         {
             SkipDialogue();
         }
