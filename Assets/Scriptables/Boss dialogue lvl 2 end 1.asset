@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e24092d584d5648b17fd5779c32c2a, type: 3}
+  m_Name: Boss dialogue lvl 2 end
+  m_EditorClassIdentifier: 
+  conversationBlock:
+  - <pause=.9><size=31>Hey you're the rookie, right? </size>
+  - <size=31>The rookie taking bathroom breaks<pause=.5>,   lunch breaks<pause=.5>,
+    PERSONAL CALLS!!</size>
+  - <size=50>YOU DISGUST ME!!!!!!!</size>
+  - <size=31>To make up for all the time you wasted...</size>
+  - <size=31>we decided to set up a printer in front of your desk.</size>
+  - <size=31><pause=.5>haha</size>
+  - '<size=34><pause=.5>HAhA.</size> '
+  - '<size=31>A<size=37>HahHaHH<size=44>Ah<size=31>aHH<size=34>Aa<size=44>hHA<size=31>AhAA</size> '
+  - <size=38> THIS IS WHAT HAPPENS WHEN YOU MAKE PERSONAL CALLS!!!!!!!!</size>
+  - <size=31>Now get out of here. My wife is making<pause=.6><speed=10> tacos.</size>
+  - 
+  character: {fileID: 11400000, guid: 10f6fd8d11d9f18449efee060bc51147, type: 2}
