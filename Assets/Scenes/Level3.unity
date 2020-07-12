@@ -153,6 +153,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1222755483878549095, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 1477180810935675051, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -796,6 +801,18 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: levelDialogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 23f138c70cff6004a8f60496f7d13790,
+        type: 2}
+    - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: levelDialogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 438e4c1937ee6904d82b221d2272baf1,
+        type: 2}
     - target: {fileID: 8546162308283508499, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_textInfo.characterCount
