@@ -20,11 +20,12 @@ public class MainMenu : MonoBehaviour
         Managers.ScenesManager.LoadNextLevel();
     }
 
-    public void ContinueGame() {
-
-    }
-
-    public void SpawnCredits() {
-
+    public void SelectLevel(int buildIndex) {
+        if (Managers.ScenesManager.isTransitioning) {
+            return;
+        }
+        
+        Managers.AudioManager.StopLoop(Managers.AudioManager.bgmAudio, 1);
+        Managers.ScenesManager.LoadScene(buildIndex);
     }
 }
