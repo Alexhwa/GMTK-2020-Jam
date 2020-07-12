@@ -11,12 +11,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e68fb04aadacd7041bc8dc4d5cdd7bd9,
+      objectReference: {fileID: 21300000, guid: b468290e7d598a64ab18c690ae76692a,
         type: 3}
     - target: {fileID: 6341286568463960786, guid: 19cbb5905c24c7c448358f6f0f59766c,
         type: 3}
       propertyPath: m_Name
-      value: Letter Counterfeit
+      value: Letter Counterfeit Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6341286568463960789, guid: 19cbb5905c24c7c448358f6f0f59766c,
         type: 3}

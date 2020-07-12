@@ -8,7 +8,7 @@ using DG.Tweening;
 public class BigPaper : MonoBehaviour
 {
     public bool isActive { get; protected set; }
-    public bool isCompleted { get; private set; }
+    public bool isCompleted { get; set; }
     public bool isSubmitted { get; private set; }
 
     public bool isCounterfeit;

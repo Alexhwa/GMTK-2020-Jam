@@ -13,6 +13,7 @@ public class Stamp : MonoBehaviour
     public Collision collision;
 
     public GameObject stampPrefab;
+    public AudioClip dropSound;
 
     public void BeginDrag() {
         stampImage.rectTransform.anchoredPosition = new Vector2(0, 0.5f);
@@ -27,6 +28,7 @@ public class Stamp : MonoBehaviour
         stampImage.rectTransform.anchoredPosition = Vector2.zero;
 
         SetToMouse();
+        Managers.AudioManager.PlayOneShot(dropSound);
 
         if (collision.IsColliding) {
             // find highest page and stamp that one
