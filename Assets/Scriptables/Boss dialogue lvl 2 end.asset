@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Boss dialogue lvl 2 end
   m_EditorClassIdentifier: 
   conversationBlock:
-  - <pause=.9><size=31>Hey you're the rookie, right? </size>
-  - <size=31>The rookie taking bathroom breaks<pause=.5>,   lunch breaks<pause=.5>,
+  - <pause=.9><size=31>Hey, you're the rookie, right? </size>
+  - <size=31>The rookie taking bathroom breaks<pause=.5>,  lunch breaks<pause=.5>,
     PERSONAL CALLS!!</size>
   - <size=50>YOU DISGUST ME!!!!!!!</size>
   - <size=31>To make up for all the time you wasted...</size>
-  - <size=31>we decided to set up a printer in front of your desk.</size>
+  - <size=31>We decided to set up a printer in front of your desk!</size>
   - <size=31><pause=.5>haha</size>
   - '<size=34><pause=.5>HAhA.</size> '
   - '<size=31>A<size=37>HahHaHH<size=44>Ah<size=31>aHH<size=34>Aa<size=44>hHA<size=31>AhAA</size> '
