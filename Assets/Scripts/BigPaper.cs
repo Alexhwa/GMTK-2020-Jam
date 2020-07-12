@@ -168,6 +168,5 @@ public class BigPaper : MonoBehaviour
         }
     }
 
-
     public Vector2 GetMousePoint() => canvas.worldCamera.ScreenToWorldPoint(Input.mousePosition).ToVector2();
 }
