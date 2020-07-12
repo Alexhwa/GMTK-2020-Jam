@@ -562,7 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTransitioning: 0
   faderAnimator: {fileID: 6344577485147406372}
-  numLevels: 5
+  numLevels: 6
   firstLevelBuildIndex: 1
 --- !u!1 &1475973330506511368
 GameObject:
