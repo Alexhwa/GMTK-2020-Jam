@@ -85,9 +85,9 @@ public class LevelPlayer : MonoBehaviour
 
     private void PaperSubmitted(BigPaper paper) {
         if (!paper.isCounterfeit)
-            score++;
+            score += 2;
         else
-            score--;
+            score -= 2;
     }
 
     private void PaperTrashed(BigPaper paper) {
