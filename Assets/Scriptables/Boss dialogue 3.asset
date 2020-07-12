@@ -17,7 +17,7 @@ MonoBehaviour:
     receptacles."</size>
   - <size=31>So we've cut a hole in your desk and gave you <size=50>TWO</size> recycling
     bins!
-  - <size=31>You still have a job to do! Lose your documents and it's coming out
-    of your paycheck!</size>
+  - <size=31>You still have a job to do, rookie! Lose your documents and it's coming
+    out of your paycheck!</size>
   - 
   character: {fileID: 11400000, guid: 10f6fd8d11d9f18449efee060bc51147, type: 2}
