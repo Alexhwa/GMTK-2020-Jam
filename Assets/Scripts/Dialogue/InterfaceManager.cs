@@ -148,11 +148,13 @@ public class InterfaceManager : MonoBehaviour
         }
         else
         {
-            if (Random.Range(0, 1.0f) < .15f)
-            {
-                var chosenClip = currentDialogue.character.charVoice[Random.Range(0, currentDialogue.character.charVoice.Length)];
-                Managers.AudioManager.PlayOneShot(chosenClip);
-            }
+            
         }
+    }
+    private IEnumerator DelayPlaySound(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        var chosenClip = currentDialogue.character.charVoice[Random.Range(0, currentDialogue.character.charVoice.Length)];
+        Managers.AudioManager.PlayOneShot(chosenClip);
     }
 }
