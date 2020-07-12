@@ -54,6 +54,10 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
+    public void ReloadLevel() {
+        LoadScene(sceneBuildIndex);
+    }
+
     public void LoadMainMenu() {
         LoadScene(0);
     }
