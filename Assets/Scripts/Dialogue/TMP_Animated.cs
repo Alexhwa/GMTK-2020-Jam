@@ -14,7 +14,7 @@ namespace TMPro
     public class TMP_Animated : TextMeshProUGUI
     {
 
-        [SerializeField] private float speed = 10;
+        [SerializeField] public float speed = 10;
         public EmotionEvent onEmotionChange;
         public TextRevealEvent onTextReveal;
         public DialogueEvent onDialogueFinish;

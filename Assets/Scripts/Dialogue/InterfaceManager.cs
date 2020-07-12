@@ -173,11 +173,12 @@ public class InterfaceManager : MonoBehaviour
     }
     private void SkipDialogue()
     {
-        //StartCoroutine(RevertTextSpeed(animatedText));
+        animatedText.speed = 200;
+        StartCoroutine(RevertTextSpeed(animatedText.speed));
     }
     IEnumerator RevertTextSpeed(float originalTextSpeed)
     {
         yield return new WaitForSeconds(.01f);
-
+        animatedText.speed = originalTextSpeed;
     }
 }
