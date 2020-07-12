@@ -31,7 +31,6 @@ public class InterfaceManager : MonoBehaviour
     [HideInInspector()]
     public DialogueEndEvent onDialogueEnd;
 
-    private AudioManager audioManager;
     public CharacterScript charScript;
 
     private void Start()
@@ -39,7 +38,6 @@ public class InterfaceManager : MonoBehaviour
         animatedText.onDialogueFinish.AddListener(() => FinishDialogue());
         animatedText.onTextReveal.AddListener(c => PlayVoice(c));
         startPos = dialogueUI.GetComponent<RectTransform>().anchoredPosition;
-        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -146,14 +144,14 @@ public class InterfaceManager : MonoBehaviour
         string punctuation = ",.:!?/-=;'";
         if (punctuation.Contains(c.ToString()))
         {
-            audioManager.PlayOneShot(currentDialogue.character.punctuationVoice);
+            Managers.AudioManager.PlayOneShot(currentDialogue.character.punctuationVoice);
         }
         else
         {
             if (Random.Range(0, 1.0f) < .15f)
             {
                 var chosenClip = currentDialogue.character.charVoice[Random.Range(0, currentDialogue.character.charVoice.Length)];
-                audioManager.PlayOneShot(chosenClip);
+                Managers.AudioManager.PlayOneShot(chosenClip);
             }
         }
     }

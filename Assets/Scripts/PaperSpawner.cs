@@ -60,30 +60,33 @@ public class PaperSpawner : MonoBehaviour
         WaveData wave = waveDatas[currentWave];
 
         for (int i = 0; i < wave.waveSize; i++) {
-            GameObject paperObj = Instantiate(
-                paperPrefabs[Random.Range(0, paperPrefabs.Count)],
-                transform.position, Quaternion.identity
-            );
-
-            Canvas canvas = paperObj.GetComponent<Canvas>();
-            canvas.worldCamera = cam;
-            canvas.sortingOrder = 2 * i + topPaperLayer;
-
-            BigPaper paper = paperObj.GetComponent<BigPaper>();
-            paper.paperSpawner = this;
-            paper.table = tableCollider;
-            paper.lifeTime = wave.paperLifetime * lifetimeScale;
-
-            paperObj.transform.DOMove(
-                spawnRegion.min + new Vector2(Random.Range(0, spawnRegion.size.x), Random.Range(0, spawnRegion.size.y)), moveTime
-            ).SetEase(Ease.OutQuad);
-            paperObj.transform.DORotate(
-                new Vector3(0, 0, Random.Range(-maxRotate, maxRotate)), moveTime
-            ).SetEase(Ease.OutQuad);
+            SpawnPaper(paperPrefabs[Random.Range(0, paperPrefabs.Count)], spawnRegion.min + new Vector2(Random.Range(0, spawnRegion.size.x), Random.Range(0, spawnRegion.size.y)));
         }
 
-        topPaperLayer += 2 * wave.waveSize;
         nextRepTime += Mathf.Lerp(wave.startSpawnTime, wave.endSpawnTime, (float)currentRep / Mathf.Max(1, wave.repetitions - 1));
+    }
+
+    public BigPaper SpawnPaper(GameObject prefab, Vector3 targetPosition) {
+        GameObject paperObj = Instantiate(prefab, transform.position, Quaternion.identity);
+
+        Canvas canvas = paperObj.GetComponent<Canvas>();
+        canvas.worldCamera = cam;
+        canvas.sortingOrder = topPaperLayer;
+        topPaperLayer += 2;
+
+        BigPaper paper = paperObj.GetComponent<BigPaper>();
+        paper.paperSpawner = this;
+        paper.table = tableCollider;
+        paper.lifeTime = waveDatas[currentWave].paperLifetime * lifetimeScale;
+
+        paperObj.transform.DOMove(
+            targetPosition, moveTime
+        ).SetEase(Ease.OutQuad);
+        paperObj.transform.DORotate(
+            new Vector3(0, 0, Random.Range(-maxRotate, maxRotate)), moveTime
+        ).SetEase(Ease.OutQuad);
+
+        return paper;
     }
 
     public bool SortToTop(BigPaper paper) {

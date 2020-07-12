@@ -288,6 +288,36 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1477180811333013635, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279839822
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811333013635, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811333013635, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811333013635, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811333013635, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811333013635, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1477180811553013170, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: interfaceManager
@@ -297,6 +327,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811720417678, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811720417678, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811720417678, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811720417678, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180811720417678, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279839822
       objectReference: {fileID: 0}
     - target: {fileID: 1477180811720417678, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
@@ -474,6 +529,36 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1477180812603500441, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279839822
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812730564827, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -197.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812603500441, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812603500441, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812603500441, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812603500441, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1477180812730564827, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -579,6 +664,31 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1477180812858767163, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812858767163, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812858767163, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812858767163, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477180812858767163, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279839822
+      objectReference: {fileID: 0}
     - target: {fileID: 6623856275187647358, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_Color.a
@@ -648,6 +758,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646762281075031162, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646762281075031162, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646762281075031162, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646762281075031162, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6646762281075031162, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279839822
       objectReference: {fileID: 0}
     - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}

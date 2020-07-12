@@ -19,7 +19,7 @@ public class BigPaper : MonoBehaviour
     public AudioClip grabSound;
     public AudioClip completedSound;
 
-    [HideInInspector] public PaperSpawner paperSpawner;
+    public PaperSpawner paperSpawner;
     public Collider2D table;
 
     [Header("Components")]
