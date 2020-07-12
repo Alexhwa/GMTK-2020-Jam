@@ -17,7 +17,9 @@ public class InterfaceManager : MonoBehaviour
 
     private DialogueData currentDialogue;
     private int dialogueIndex;
+    [HideInInspector()]
     public bool canExit;
+    [HideInInspector()]
     public bool nextDialogue;
     private bool inDialogue;
     private bool dialogueFinished;
@@ -26,6 +28,7 @@ public class InterfaceManager : MonoBehaviour
     private Vector2 startPos;
 
     [System.Serializable] public class DialogueEndEvent : UnityEvent { }
+    [HideInInspector()]
     public DialogueEndEvent onDialogueEnd;
 
     private AudioManager audioManager;
@@ -79,6 +82,7 @@ public class InterfaceManager : MonoBehaviour
     }
     private void ActivateUI()
     {
+
         dialogueUI.SetActive(true);
         dimScreen.GetComponent<CanvasGroup>().DOFade(1, .7f);
     }
@@ -141,7 +145,15 @@ public class InterfaceManager : MonoBehaviour
         string punctuation = ",.:!?/-=;'";
         if (punctuation.Contains(c.ToString()))
         {
-            //currentDialogue.character.punc
+            audioManager.PlayOneShot(currentDialogue.character.punctuationVoice);
+        }
+        else
+        {
+            if (Random.Range(0, 1.0f) < .3f)
+            {
+                var chosenClip = currentDialogue.character.charVoice[Random.Range(0, currentDialogue.character.charVoice.Length)];
+                audioManager.PlayOneShot(chosenClip);
+            }
         }
     }
 }

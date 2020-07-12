@@ -18,3 +18,6 @@ MonoBehaviour:
   neutralSprite: {fileID: 0}
   worriedSprite: {fileID: 0}
   suprisedSprite: {fileID: 0}
+  charVoice:
+  - {fileID: 8300000, guid: a9da4b6df4306554aaf90568dfa4ac36, type: 3}
+  punctuationVoice: {fileID: 8300000, guid: a9da4b6df4306554aaf90568dfa4ac36, type: 3}
