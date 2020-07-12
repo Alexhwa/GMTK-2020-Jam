@@ -1605,6 +1605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 6134351302958510677}
+    - target: {fileID: 4358099189272054255, guid: 095639ab2017b5347bd35bfaef3d5f5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reset
       objectReference: {fileID: 0}
     - target: {fileID: 5241639159735563370, guid: 095639ab2017b5347bd35bfaef3d5f5d,
         type: 3}
@@ -1894,6 +1899,16 @@ PrefabInstance:
       propertyPath: m_Colors.m_NormalColor.b
       value: 0.9019608
       objectReference: {fileID: 0}
+    - target: {fileID: 4358099189272054255, guid: 095639ab2017b5347bd35bfaef3d5f5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6134351302958510677}
+    - target: {fileID: 4358099189272054255, guid: 095639ab2017b5347bd35bfaef3d5f5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     - target: {fileID: 5241639159735563370, guid: 095639ab2017b5347bd35bfaef3d5f5d,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2181,6 +2196,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358099189272054255, guid: 095639ab2017b5347bd35bfaef3d5f5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6134351302958510677}
+    - target: {fileID: 4358099189272054255, guid: 095639ab2017b5347bd35bfaef3d5f5d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Next
       objectReference: {fileID: 0}
     - target: {fileID: 5241639159735563370, guid: 095639ab2017b5347bd35bfaef3d5f5d,
         type: 3}
