@@ -37,7 +37,7 @@ public class LevelPlayer : MonoBehaviour
 
     private void Start() {
         levelTimer = -3;
-        interfaceManager.onDialogueEnd.AddListener(() => ActivateHelpBox());
+        interfaceManager.ActivateDialogue();
     }
 
     private void Update() {
