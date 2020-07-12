@@ -286,7 +286,7 @@ MonoBehaviour:
   raycastBlocker: {fileID: 1477180811126630360}
   report: {fileID: 1477180811577103052}
   levelTime: 45
-  oneStarThreshold: 5
+  oneStarThreshold: 10
   twoStarThreshold: 12
   threeStarThreshold: 20
   shouldAudioPitch: 1
