@@ -27,6 +27,7 @@ public class ExplainPanel : MonoBehaviour
     public void PressedStart() {
         back.interactable = false;
         back.blocksRaycasts = false;
+        back.DOKill();
         back.DOFade(0, fadeTime);
 
         levelPlayer.isActive = true;

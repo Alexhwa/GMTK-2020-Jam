@@ -10,6 +10,5 @@ public class DialogueData : ScriptableObject
     public List<string> conversationBlock;
     public CharacterData character;
     [Tooltip("What level this dialogue block will appear on starting on 0.")]
-    public int order;
     public Ease ease;
 }
