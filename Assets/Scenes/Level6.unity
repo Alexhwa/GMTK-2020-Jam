@@ -640,7 +640,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d625acc785febd14ebb1fb604af79ce5,
+      objectReference: {fileID: 21300000, guid: b49327e1f38d8c845bc83fb677e34ba2,
         type: 3}
     - target: {fileID: 1477180812197440935, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
@@ -690,12 +690,12 @@ PrefabInstance:
     - target: {fileID: 1477180812600581676, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: threeStarThreshold
-      value: 32
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 1477180812600581676, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: twoStarThreshold
-      value: 24
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1477180812603500441, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
