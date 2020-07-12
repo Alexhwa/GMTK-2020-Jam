@@ -8,16 +8,8 @@ public class CharacterScript : MonoBehaviour
 {
     public CharacterData charData;
     
-
-    // Start is called before the first frame update
-    void Start()
+    public void SetCharacterValsInUI(CharacterData charData)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

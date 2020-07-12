@@ -477,7 +477,7 @@ PrefabInstance:
     - target: {fileID: 1477180812730564827, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -197
+      value: -197.00003
       objectReference: {fileID: 0}
     - target: {fileID: 1477180812757295144, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
@@ -666,6 +666,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d01f78ef62158634cb6fbddc04bda948,
         type: 2}
+    - target: {fileID: 8546162309697475204, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372,
+        type: 3}
+    - target: {fileID: 8546162309697475207, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546162309697475207, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82c4c68b988567047b3438f9903e839d, type: 3}
 --- !u!114 &436418740 stripped

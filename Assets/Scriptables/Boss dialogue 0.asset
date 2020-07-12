@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e24092d584d5648b17fd5779c32c2a, type: 3}
-  m_Name: Devil dialogue 2
+  m_Name: Boss dialogue 0
   m_EditorClassIdentifier: 
   conversationBlock:
   - '<pause=.9><size=50>VERY IMPRESSIVE!!!</size> '
@@ -18,6 +18,6 @@ MonoBehaviour:
     me.</size>
   - <size=34>I bet you think filing paperwork is aaallllllll fun and games, but you
     better get your efficiency up or it's the ravine for you</size>
-  - '<size=34>I''ll see you tomorrow, <size=50>ROOKIE!</size> Get going... '
-  character: {fileID: 11400000, guid: 6a292f240b6f7824f8b0a46f902457d8, type: 2}
-  ease: 26
+  - '<size=34>I''ll see you tomorrow, <size=50>ROOKIE!</size> Get going...  '
+  - 
+  character: {fileID: 11400000, guid: 10f6fd8d11d9f18449efee060bc51147, type: 2}

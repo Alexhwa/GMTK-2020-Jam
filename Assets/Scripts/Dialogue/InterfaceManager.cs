@@ -75,7 +75,7 @@ public class InterfaceManager : MonoBehaviour
         ActivateUI();
         AdjustDialogueData(currentDialogue);
         dialogueUI.transform.DOKill();
-        Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 20), 1f).SetEase(currentDialogue.ease));
+        Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 20), 1f).SetEase(Ease.OutCubic));
         s.target = dialogueUI.transform;
         animatedText.ReadText(currentDialogue.conversationBlock[dialogueIndex]);
         

@@ -19,5 +19,3 @@ MonoBehaviour:
   - <emotion=sad>Just don't get on the boss's bad side. He's fond of throwing things.
   - 
   character: {fileID: 11400000, guid: 6a292f240b6f7824f8b0a46f902457d8, type: 2}
-  order: 0
-  ease: 9
