@@ -28,10 +28,14 @@ public class InterfaceManager : MonoBehaviour
     [System.Serializable] public class DialogueEndEvent : UnityEvent { }
     public DialogueEndEvent onDialogueEnd;
 
+    private AudioManager audioManager;
+
     private void Start()
     {
         animatedText.onDialogueFinish.AddListener(() => FinishDialogue());
+        animatedText.onTextReveal.AddListener(c => PlayVoice(c));
         startPos = dialogueUI.GetComponent<RectTransform>().anchoredPosition;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -51,6 +55,7 @@ public class InterfaceManager : MonoBehaviour
                 dialogueFinished = false;
             }
         }
+        
     }
 
     public void ActivateDialogue()
@@ -125,6 +130,18 @@ public class InterfaceManager : MonoBehaviour
         else
         {
             convoBlock[0] = dialogueStartPauseTxt + convoBlock[0];
+        }
+    }
+    private void PlayVoice(char c)
+    {
+        if(currentDialogue == null)
+        {
+            return;
+        }
+        string punctuation = ",.:!?/-=;'";
+        if (punctuation.Contains(c.ToString()))
+        {
+            //currentDialogue.character.punc
         }
     }
 }

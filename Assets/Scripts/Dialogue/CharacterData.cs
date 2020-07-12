@@ -11,4 +11,7 @@ public class CharacterData : ScriptableObject
     public Sprite neutralSprite;
     public Sprite worriedSprite;
     public Sprite suprisedSprite;
+
+    public AudioClip[] charVoice;
+    public AudioClip punctuationVoice;
 }

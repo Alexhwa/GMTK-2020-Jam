@@ -14,10 +14,13 @@ public class ExplainPanel : MonoBehaviour
     public CanvasGroup back;
     public float backMoveOffset;
     public float fadeTime;
+    private bool activated;
+
+    public InterfaceManager interfaceManager;
 
     private void Start() {
-        (back.transform as RectTransform).anchoredPosition += new Vector2(0, backMoveOffset);
         scoreText.text = "Target Score: " + levelPlayer.threeStarThreshold;
+        interfaceManager.onDialogueEnd.AddListener(() => ActivateHelpBox());
     }
 
 
@@ -27,5 +30,16 @@ public class ExplainPanel : MonoBehaviour
         back.DOFade(0, fadeTime);
 
         levelPlayer.isActive = true;
+    }
+    public void ActivateHelpBox()
+    {
+        if (activated)
+        {
+            return;
+        }
+        activated = true;
+        var backRect = (back.transform as RectTransform);
+        backRect.anchoredPosition += new Vector2(0, backMoveOffset);
+        backRect.GetComponent<CanvasGroup>().DOFade(1, 1.5f).SetEase(Ease.OutCubic);
     }
 }
