@@ -98,7 +98,7 @@ public class LevelPlayer : MonoBehaviour
 
         if (interfaceManager.levelDialogue.Length >= 2)
         {
-            interfaceManager.onDialogueEnd.AddListener(() => StartCoroutine(PlayAnotherDialogue(.5f)));
+            interfaceManager.onDialogueEnd.AddListener(() => StartCoroutine(PlayAnotherDialogue(1.4f)));
 
             interfaceManager.ActivateDialogue();
         }
@@ -107,7 +107,7 @@ public class LevelPlayer : MonoBehaviour
     IEnumerator PlayAnotherDialogue(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (dialogueCounter < interfaceManager.levelDialogue.Length - 1)
+        if (dialogueCounter < interfaceManager.levelDialogue.Length - 2)
         {
             interfaceManager.ActivateDialogue();
             dialogueCounter++;
