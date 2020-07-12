@@ -866,7 +866,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelDialogue.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 9ac91e1b0129ea348b4cb45a2087b25d,
+      objectReference: {fileID: 11400000, guid: d01f78ef62158634cb6fbddc04bda948,
         type: 2}
     - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
