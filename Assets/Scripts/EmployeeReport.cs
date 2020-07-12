@@ -53,10 +53,10 @@ public class EmployeeReport : MonoBehaviour
 
 
     public void Quit() {
-        
+        Managers.ScenesManager.LoadMainMenu();
     }
 
     public void Next() {
-
+        Managers.ScenesManager.LoadNextLevel();
     }
 }
