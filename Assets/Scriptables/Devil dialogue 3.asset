@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Devil dialogue 3
   m_EditorClassIdentifier: 
   conversationBlock:
-  - <pause=.9>
-  - <emotion=worried>
+  - <pause=.9>So the boss gave you two recycling bins, huh?
+  - He really hates regulations.
+  - <emotion=sad>You should have seen when he realized he had to pay us.
+  - <emotion=neutral>Anyway, if you can handle that without losing all your documents,
+    you can handle anything.
   - 
-  - 
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 6a292f240b6f7824f8b0a46f902457d8, type: 2}
