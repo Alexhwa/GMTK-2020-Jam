@@ -67,8 +67,9 @@ public class InterfaceManager : MonoBehaviour
         }
     }
 
-    public void ActivateDialogue()
+    public void ActivateDialogue(DialogueData dialogueData)
     {
+        
         animatedText.text = string.Empty;
         inDialogue = true;
         canExit = false;
@@ -78,6 +79,10 @@ public class InterfaceManager : MonoBehaviour
             timesDialogueActivated = levelDialogue.Length - 1;
         }
         currentDialogue = levelDialogue[timesDialogueActivated];
+        if (dialogueData != null)
+        {
+            currentDialogue = dialogueData;
+        }
         ActivateUI();
         AdjustDialogueData(currentDialogue);
         dialogueUI.transform.DOKill();
@@ -88,7 +93,6 @@ public class InterfaceManager : MonoBehaviour
     }
     private void ActivateUI()
     {
-
         dialogueUI.SetActive(true);
         dimScreen.GetComponent<CanvasGroup>().DOFade(1, .7f);
     }

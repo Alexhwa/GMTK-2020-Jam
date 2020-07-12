@@ -30,6 +30,7 @@ public class LevelPlayer : MonoBehaviour
 
     public InterfaceManager interfaceManager;
     private int dialogueCounter;
+    public DialogueData failDialogue;
 
     public int score = 0;
 
@@ -40,7 +41,7 @@ public class LevelPlayer : MonoBehaviour
 
     private void Start() {
         levelTimer = -3;
-        interfaceManager.ActivateDialogue();
+        interfaceManager.ActivateDialogue(null);
     }
 
     private void Update() {
@@ -100,27 +101,28 @@ public class LevelPlayer : MonoBehaviour
         Utilities.Invoke(() => report.InitializeReport(this), 1.5f, this);
 
         OnTimeOver?.Invoke();
-
-        if (interfaceManager.levelDialogue.Length >= 2)
+        if (CheckFailed())
         {
-            interfaceManager.onDialogueEnd.AddListener(() => StartCoroutine(PlayAnotherDialogue(1.4f)));
-
-            interfaceManager.ActivateDialogue();
+            interfaceManager.ActivateDialogue(failDialogue);
         }
+        else
+        {
+            if (interfaceManager.levelDialogue.Length >= 2)
+            {
+                interfaceManager.onDialogueEnd.AddListener(() => StartCoroutine(PlayAnotherDialogue(1.4f)));
 
+                interfaceManager.ActivateDialogue(null);
+            }
+        }
     }
     IEnumerator PlayAnotherDialogue(float delay)
     {
         yield return new WaitForSeconds(delay);
         if (dialogueCounter < interfaceManager.levelDialogue.Length - 2)
         {
-            interfaceManager.ActivateDialogue();
+            interfaceManager.ActivateDialogue(null);
             dialogueCounter++;
         }
-    }
-    private void ActivateHelpBox()
-    {
-        print("Dialogue Ended. Activating help box.");
     }
     private bool CheckFailed()
     {

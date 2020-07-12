@@ -292,6 +292,7 @@ MonoBehaviour:
   shouldAudioPitch: 1
   playSong: {fileID: 8300000, guid: 9a53787c991540c4083e90a9b5411878, type: 3}
   interfaceManager: {fileID: 8515988840887390349}
+  failDialogue: {fileID: 11400000, guid: b5f932222c5635c4da1df454b203ef3d, type: 2}
   score: 0
 --- !u!1 &1477180812757295145
 GameObject:
