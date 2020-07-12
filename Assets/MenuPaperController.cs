@@ -20,7 +20,11 @@ public class MenuPaperController : MonoBehaviour
     private void OnPaperSubmit() {
         OnSubmit?.Invoke();
     }
-    
+
+
+    private void Start() {
+        paper.isCompleted = true;
+    }
 
     public void NewGame() {
 

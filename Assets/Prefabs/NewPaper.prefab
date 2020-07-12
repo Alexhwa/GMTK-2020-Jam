@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCounterfeit: 0
   lifeTime: 30
+  grabSound: {fileID: 8300000, guid: 7ecbe0ce9e7f3c844a0de6bab4adbf6c, type: 3}
   completedSound: {fileID: 8300000, guid: 192c3727e4a74d747b2dfaaa3c6ad6e4, type: 3}
   paperSpawner: {fileID: 0}
   table: {fileID: 0}
