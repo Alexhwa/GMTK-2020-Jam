@@ -711,6 +711,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8253612da588b944f8da530e32fc89a2, type: 3}
+--- !u!1 &508451877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8911643222794140880, guid: 4893ee5a020a382468a09771c866a8a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1192712615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1192712615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -718,31 +724,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 144348386}
     m_Modifications:
-    - target: {fileID: 50894108347024546, guid: 4893ee5a020a382468a09771c866a8a8,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50894108347024546, guid: 4893ee5a020a382468a09771c866a8a8,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50894108347024546, guid: 4893ee5a020a382468a09771c866a8a8,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50894108347024546, guid: 4893ee5a020a382468a09771c866a8a8,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50894108347024546, guid: 4893ee5a020a382468a09771c866a8a8,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 796259132, guid: 4893ee5a020a382468a09771c866a8a8, type: 3}
+      propertyPath: dimScreen
+      value: 
+      objectReference: {fileID: 508451877}
     - target: {fileID: 50894109226701704, guid: 4893ee5a020a382468a09771c866a8a8,
         type: 3}
       propertyPath: m_Name
@@ -853,10 +838,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 50894109226701709, guid: 4893ee5a020a382468a09771c866a8a8,
+    - target: {fileID: 525149487511414005, guid: 4893ee5a020a382468a09771c866a8a8,
         type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      propertyPath: m_Color.a
+      value: 0.65882355
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4893ee5a020a382468a09771c866a8a8, type: 3}

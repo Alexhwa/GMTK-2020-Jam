@@ -26,6 +26,8 @@ public class LevelPlayer : MonoBehaviour
 
     public static EmptyDelegate OnTimeOver;
 
+    public InterfaceManager interfaceManager;
+
     public int score = 0;
 
 
@@ -35,6 +37,7 @@ public class LevelPlayer : MonoBehaviour
 
     private void Start() {
         levelTimer = -3;
+        interfaceManager.onDialogueEnd.AddListener(() => ActivateHelpBox());
     }
 
     private void Update() {
@@ -91,5 +94,9 @@ public class LevelPlayer : MonoBehaviour
         Utilities.Invoke(() => report.InitializeReport(this), 1.5f, this);
 
         OnTimeOver?.Invoke();
+    }
+    private void ActivateHelpBox()
+    {
+        print("Dialogue Ended. Activating help box.");
     }
 }

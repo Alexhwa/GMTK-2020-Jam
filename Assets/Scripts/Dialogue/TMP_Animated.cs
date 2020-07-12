@@ -11,7 +11,6 @@ namespace TMPro
     [System.Serializable] public class TextRevealEvent : UnityEvent<char> { }
 
     [System.Serializable] public class DialogueEvent : UnityEvent { }
-
     public class TMP_Animated : TextMeshProUGUI
     {
 
