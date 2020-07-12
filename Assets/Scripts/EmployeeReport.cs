@@ -21,6 +21,7 @@ public class EmployeeReport : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public Image[] stars;
     public TextMeshProUGUI[] starTexts;
+    public Button nextDayButton;
 
     private void OnEnable() {
         Managers.AudioManager.PlayLoop(Managers.AudioManager.ambienceAudio, ambienceSound, 2);
@@ -46,6 +47,8 @@ public class EmployeeReport : MonoBehaviour
         if (player.score < player.oneStarThreshold) {
             stars[0].color = unreachedStarColor;
             starTexts[0].color = Color.white;
+
+            nextDayButton.interactable = false;
         }
 
         back.interactable = true;
@@ -66,5 +69,10 @@ public class EmployeeReport : MonoBehaviour
     public void Next() {
         Managers.AudioManager.StopLoop(Managers.AudioManager.ambienceAudio, 1);
         Managers.ScenesManager.LoadNextLevel();
+    }
+
+    public void Reset() {
+        Managers.AudioManager.StopLoop(Managers.AudioManager.ambienceAudio, 1);
+        Managers.ScenesManager.ReloadLevel();
     }
 }
