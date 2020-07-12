@@ -33,6 +33,10 @@ public class InterfaceManager : MonoBehaviour
 
     public CharacterScript charScript;
 
+    public float minVoiceGap = .1f;
+    public float maxVoiceGapVariance = .05f;
+    private bool canVoiceBlip = true;
+
     private void Start()
     {
         animatedText.onDialogueFinish.AddListener(() => FinishDialogue());
@@ -57,7 +61,10 @@ public class InterfaceManager : MonoBehaviour
                 dialogueFinished = false;
             }
         }
-        
+        else if((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && inDialogue && !dialogueFinished)
+        {
+            SkipDialogue();
+        }
     }
 
     public void ActivateDialogue()
@@ -137,6 +144,7 @@ public class InterfaceManager : MonoBehaviour
     }
     private void PlayVoice(char c)
     {
+
         if(currentDialogue == null)
         {
             return;
@@ -148,13 +156,28 @@ public class InterfaceManager : MonoBehaviour
         }
         else
         {
-            
+            if (canVoiceBlip)
+            {
+                StartCoroutine(PlayVoiceBlip(minVoiceGap + Random.Range(-maxVoiceGapVariance, maxVoiceGapVariance)));
+            }
         }
     }
-    private IEnumerator DelayPlaySound(float delay)
+    private IEnumerator PlayVoiceBlip(float delay)
     {
-        yield return new WaitForSeconds(delay);
         var chosenClip = currentDialogue.character.charVoice[Random.Range(0, currentDialogue.character.charVoice.Length)];
         Managers.AudioManager.PlayOneShot(chosenClip);
+
+        canVoiceBlip = false;
+        yield return new WaitForSeconds(delay);
+        canVoiceBlip = true;
+    }
+    private void SkipDialogue()
+    {
+        //StartCoroutine(RevertTextSpeed(animatedText));
+    }
+    IEnumerator RevertTextSpeed(float originalTextSpeed)
+    {
+        yield return new WaitForSeconds(.01f);
+
     }
 }
