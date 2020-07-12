@@ -32,6 +32,7 @@ public class InterfaceManager : MonoBehaviour
     public DialogueEndEvent onDialogueEnd;
 
     private AudioManager audioManager;
+    public CharacterScript charScript;
 
     private void Start()
     {
@@ -78,7 +79,7 @@ public class InterfaceManager : MonoBehaviour
         Sequence s = DOTween.Sequence().Append(dialogueUI.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 20), 1f).SetEase(Ease.OutCubic));
         s.target = dialogueUI.transform;
         animatedText.ReadText(currentDialogue.conversationBlock[dialogueIndex]);
-        
+        charScript.SetCharacterValsInUI(currentDialogue.character);
     }
     private void ActivateUI()
     {

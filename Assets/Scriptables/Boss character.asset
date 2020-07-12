@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f497d0a007f014fa439765dc724050, type: 3}
   m_Name: Boss character
   m_EditorClassIdentifier: 
-  characterName: Winston
-  characterColor: {r: 1, g: 0.75342274, b: 0, a: 0}
-  characterNameColor: {r: 0.16981131, g: 0, b: 0, a: 0}
+  characterName: The Boss
+  characterColor: {r: 0.16862746, g: 0, b: 0, a: 1}
+  characterNameColor: {r: 1, g: 0.8277145, b: 0.0047169924, a: 1}
   neutralSprite: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372, type: 3}
   worriedSprite: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372, type: 3}
   suprisedSprite: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372, type: 3}

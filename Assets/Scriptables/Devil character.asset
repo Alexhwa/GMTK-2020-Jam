@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Devil character
   m_EditorClassIdentifier: 
   characterName: Winston
-  characterColor: {r: 0.8018868, g: 0, b: 0, a: 0}
-  characterNameColor: {r: 0.31132078, g: 0, b: 0, a: 0}
-  neutralSprite: {fileID: 0}
-  worriedSprite: {fileID: 0}
-  suprisedSprite: {fileID: 0}
+  characterColor: {r: 0.30980393, g: 0, b: 0, a: 1}
+  characterNameColor: {r: 1, g: 1, b: 1, a: 1}
+  neutralSprite: {fileID: 21300000, guid: e2a41f8e898264242808cd1a42985af5, type: 3}
+  worriedSprite: {fileID: 21300000, guid: 22e942f76314f9d47b1d10f7f2111830, type: 3}
+  suprisedSprite: {fileID: 21300000, guid: c0ee3a67b2b8d3944aff741eb578f35c, type: 3}
   charVoice:
   - {fileID: 8300000, guid: a9da4b6df4306554aaf90568dfa4ac36, type: 3}
   - {fileID: 8300000, guid: ddc16568877b90a4faf1603c785d6995, type: 3}

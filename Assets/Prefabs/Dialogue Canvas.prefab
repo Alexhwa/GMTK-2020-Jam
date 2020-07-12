@@ -290,8 +290,8 @@ GameObject:
   - component: {fileID: 50894109226701708}
   - component: {fileID: 50894109226701709}
   - component: {fileID: 50894109226701710}
-  - component: {fileID: 50894109226701711}
   - component: {fileID: 796259132}
+  - component: {fileID: 3302161720810653847}
   m_Layer: 5
   m_Name: Dialogue Canvas
   m_TagString: Untagged
@@ -364,23 +364,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &50894109226701711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50894109226701704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &796259132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +385,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d01f78ef62158634cb6fbddc04bda948, type: 2}
   canExit: 0
   nextDialogue: 0
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  charScript: {fileID: 3302161720810653847}
+--- !u!114 &3302161720810653847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50894109226701704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98cb2eb16c69d849a4b28cd735ee652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameBubble: {fileID: 50894108973370125}
+  nameText: {fileID: 50894108347024546}
+  charSprite: {fileID: 50894109759828277}
+  interfaceManager: {fileID: 796259132}
 --- !u!1 &50894109468952774
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +582,6 @@ GameObject:
   - component: {fileID: 50894109759828278}
   - component: {fileID: 50894109759828276}
   - component: {fileID: 50894109759828277}
-  - component: {fileID: 50894109759828283}
   m_Layer: 5
   m_Name: Character Art
   m_TagString: Untagged
@@ -643,19 +645,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &50894109759828283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50894109759828279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98cb2eb16c69d849a4b28cd735ee652, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charData: {fileID: 0}
 --- !u!1 &50894109957431986
 GameObject:
   m_ObjectHideFlags: 0

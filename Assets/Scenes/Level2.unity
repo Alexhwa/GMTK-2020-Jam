@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &131065150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6628590763115719462, guid: 82c4c68b988567047b3438f9903e839d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1538573928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98cb2eb16c69d849a4b28cd735ee652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1424180900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -862,11 +874,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: df67f4c0f3bc8ac48acf87ad98ad1eaa,
         type: 2}
+    - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: charScript
+      value: 
+      objectReference: {fileID: 131065150}
+    - target: {fileID: 8546162308283508498, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546162308283508498, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546162308283508499, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546162308283508499, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 8546162309697475204, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c8200b401a6b63442993d1627a5ab372,
+      objectReference: {fileID: 21300000, guid: e2a41f8e898264242808cd1a42985af5,
         type: 3}
     - target: {fileID: 8546162309697475207, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
