@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!224 &1477180810995363777 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3286108783430133292, guid: 939194c631ef9f048a3e79e212071fb1,
-    type: 3}
-  m_PrefabInstance: {fileID: 4114771187949767149}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1477180811126630360 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 3286108783301619253, guid: 939194c631ef9f048a3e79e212071fb1,
-    type: 3}
-  m_PrefabInstance: {fileID: 4114771187949767149}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477180811197282773
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,8 +593,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3056194741210283119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 2.687, z: 0}
+  m_LocalScale: {x: 1.5374168, y: 1.5374168, z: 1.5374168}
   m_Children: []
   m_Father: {fileID: 1477180812757295144}
   m_RootOrder: 7
@@ -1097,7 +1085,7 @@ PrefabInstance:
     - target: {fileID: 3286108783907309878, guid: 939194c631ef9f048a3e79e212071fb1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -197.00002
+      value: -196.99998
       objectReference: {fileID: 0}
     - target: {fileID: 3286108784012877847, guid: 939194c631ef9f048a3e79e212071fb1,
         type: 3}
@@ -1106,6 +1094,18 @@ PrefabInstance:
       objectReference: {fileID: 1477180812600581676}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 939194c631ef9f048a3e79e212071fb1, type: 3}
+--- !u!224 &1477180810995363777 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3286108783430133292, guid: 939194c631ef9f048a3e79e212071fb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4114771187949767149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1477180811126630360 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3286108783301619253, guid: 939194c631ef9f048a3e79e212071fb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4114771187949767149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4729228335703941273
 PrefabInstance:
   m_ObjectHideFlags: 0
