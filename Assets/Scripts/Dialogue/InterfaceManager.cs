@@ -17,7 +17,9 @@ public class InterfaceManager : MonoBehaviour
 
     private DialogueData currentDialogue;
     private int dialogueIndex;
+    [HideInInspector()]
     public bool canExit;
+    [HideInInspector()]
     public bool nextDialogue;
     private bool inDialogue;
     private bool dialogueFinished;
@@ -26,6 +28,7 @@ public class InterfaceManager : MonoBehaviour
     private Vector2 startPos;
 
     [System.Serializable] public class DialogueEndEvent : UnityEvent { }
+    [HideInInspector()]
     public DialogueEndEvent onDialogueEnd;
 
     private AudioManager audioManager;
@@ -79,6 +82,7 @@ public class InterfaceManager : MonoBehaviour
     }
     private void ActivateUI()
     {
+
         dialogueUI.SetActive(true);
         dimScreen.GetComponent<CanvasGroup>().DOFade(1, .7f);
     }
