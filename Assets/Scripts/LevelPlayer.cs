@@ -27,6 +27,7 @@ public class LevelPlayer : MonoBehaviour
     public static EmptyDelegate OnTimeOver;
 
     public InterfaceManager interfaceManager;
+    private int dialogueCounter;
 
     public int score = 0;
 
@@ -94,6 +95,23 @@ public class LevelPlayer : MonoBehaviour
         Utilities.Invoke(() => report.InitializeReport(this), 1.5f, this);
 
         OnTimeOver?.Invoke();
+
+        if (interfaceManager.levelDialogue.Length >= 2)
+        {
+            interfaceManager.onDialogueEnd.AddListener(() => StartCoroutine(PlayAnotherDialogue(1.4f)));
+
+            interfaceManager.ActivateDialogue();
+        }
+
+    }
+    IEnumerator PlayAnotherDialogue(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (dialogueCounter < interfaceManager.levelDialogue.Length - 2)
+        {
+            interfaceManager.ActivateDialogue();
+            dialogueCounter++;
+        }
     }
     private void ActivateHelpBox()
     {

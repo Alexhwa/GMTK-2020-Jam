@@ -20,4 +20,5 @@ MonoBehaviour:
   suprisedSprite: {fileID: 0}
   charVoice:
   - {fileID: 8300000, guid: a9da4b6df4306554aaf90568dfa4ac36, type: 3}
+  - {fileID: 8300000, guid: ddc16568877b90a4faf1603c785d6995, type: 3}
   punctuationVoice: {fileID: 8300000, guid: fe9365461fd18b94a8b1556a82294db6, type: 3}

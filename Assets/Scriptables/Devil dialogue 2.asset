@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Devil dialogue 2
   m_EditorClassIdentifier: 
   conversationBlock:
-  - '<pause=.9>kjnnnfe
-
-'
-  - Asshole!
-  - 
+  - '<pause=.9><size=50>VERY IMPRESSIVE!!!</size> '
+  - <size=34>You're the rookie aren't you? I'm the boss! That means you answer to
+    me.</size>
+  - <size=34>I bet you think filing paperwork is aaallllllll fun and games, but you
+    better get your efficiency up or it's the ravine for you</size>
+  - '<size=34>I''ll see you tomorrow, <size=50>ROOKIE!</size> Get going... '
   character: {fileID: 11400000, guid: 6a292f240b6f7824f8b0a46f902457d8, type: 2}
-  order: 0
   ease: 26
