@@ -122,4 +122,8 @@ public class LevelPlayer : MonoBehaviour
     {
         print("Dialogue Ended. Activating help box.");
     }
+    private bool CheckFailed()
+    {
+        return score < oneStarThreshold;
+    }
 }
