@@ -625,6 +625,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1477180812335332533, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -299.70996
+      objectReference: {fileID: 0}
     - target: {fileID: 1477180812498345514, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -850,6 +855,18 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: levelDialogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 01030285c8aa47e40ad190fcd8dedfa9,
+        type: 2}
+    - target: {fileID: 8515988840887390349, guid: 82c4c68b988567047b3438f9903e839d,
+        type: 3}
+      propertyPath: levelDialogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6609efeaba9db654c941afa28c320d8c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82c4c68b988567047b3438f9903e839d, type: 3}
 --- !u!1001 &589536951
