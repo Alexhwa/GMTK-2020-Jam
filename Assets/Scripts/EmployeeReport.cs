@@ -12,6 +12,8 @@ public class EmployeeReport : MonoBehaviour
     public float fadeTime;
     public Color unreachedStarColor;
 
+    public AudioClip ambienceSound;
+
     [Header("Components")]
     public CanvasGroup back;
     public CanvasGroup panel;
@@ -19,6 +21,10 @@ public class EmployeeReport : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public Image[] stars;
     public TextMeshProUGUI[] starTexts;
+
+    private void OnEnable() {
+        Managers.AudioManager.PlayLoop(Managers.AudioManager.ambienceAudio, ambienceSound, 2);
+    }
 
 
     public void InitializeReport(LevelPlayer player) {
@@ -53,10 +59,12 @@ public class EmployeeReport : MonoBehaviour
 
 
     public void Quit() {
+        Managers.AudioManager.StopLoop(Managers.AudioManager.ambienceAudio, 1);
         Managers.ScenesManager.LoadMainMenu();
     }
 
     public void Next() {
+        Managers.AudioManager.StopLoop(Managers.AudioManager.ambienceAudio, 1);
         Managers.ScenesManager.LoadNextLevel();
     }
 }

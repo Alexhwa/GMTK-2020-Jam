@@ -26,16 +26,4 @@ public class MenuPaperController : MonoBehaviour
         paper.isCompleted = true;
     }
 
-    public void NewGame() {
-        Managers.ScenesManager.LoadNextLevel();
-    }
-
-    public void ContinueGame() {
-
-    }
-
-    public void SpawnCredits() {
-
-    }
-
 }
