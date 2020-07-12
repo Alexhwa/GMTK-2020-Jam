@@ -12,6 +12,7 @@ public class Outbox : MonoBehaviour
     public AudioClip failAudio;
 
     public bool isActive { get; private set; }
+    public bool isOnMenu;
 
     private void Start() {
         isActive = true;
@@ -26,13 +27,19 @@ public class Outbox : MonoBehaviour
 
     public void PaperSubmitted(BigPaper paper) {
         if (!paper.isCounterfeit) {
-            Instantiate(goodSubmitParticles, transform.position, Quaternion.identity);
-            Instantiate(goodFloatingText, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            if (!isOnMenu) {
+                Instantiate(goodSubmitParticles, transform.position, Quaternion.identity);
+                Instantiate(goodFloatingText, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            }
+
             Managers.AudioManager.PlayOneShot(submitAudio);
         }
         else {
-            Instantiate(badSubmitParticles, transform.position, Quaternion.identity);
-            Instantiate(badFloatingText, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            if (!isOnMenu) {
+                Instantiate(badSubmitParticles, transform.position, Quaternion.identity);
+                Instantiate(badFloatingText, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            }
+            
             Managers.AudioManager.PlayOneShot(failAudio);
         }
     }

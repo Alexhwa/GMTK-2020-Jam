@@ -26,6 +26,8 @@ public class LevelPlayer : MonoBehaviour
 
     public static EmptyDelegate OnTimeOver;
 
+    public AudioClip playSong;
+
     public InterfaceManager interfaceManager;
     private int dialogueCounter;
 
@@ -46,17 +48,20 @@ public class LevelPlayer : MonoBehaviour
             return;
         }
 
+        if (levelTimer == -3) {
+            Managers.AudioManager.bgmAudio.pitch = 1;
+            Managers.AudioManager.PlayLoop(Managers.AudioManager.bgmAudio, playSong, 3);
+        }
+
         levelTimer = Mathf.Min(levelTimer + Time.deltaTime, levelTime);
 
         if (!started && levelTimer >= 0) {
             started = true;
-            Managers.AudioManager.bgmAudio.pitch = 1;
-            Managers.AudioManager.bgmAudio.Play();
         }
         if (!finished && levelTimer == levelTime) {
             finished = true;
             TimeOver();
-            Managers.AudioManager.bgmAudio.Stop();
+            Managers.AudioManager.StopLoop(Managers.AudioManager.bgmAudio, 0);
             Managers.AudioManager.bgmAudio.pitch = 1;
         }
 

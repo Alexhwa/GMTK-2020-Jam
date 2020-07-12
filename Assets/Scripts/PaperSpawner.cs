@@ -15,6 +15,7 @@ public class PaperSpawner : MonoBehaviour
 
     public List<WaveData> waveDatas;
     public TextMeshProUGUI debugText;
+    public float lifetimeScale;
     [HideInInspector] public int currentWave;
     [HideInInspector] public int currentRep;
     [HideInInspector] public float nextRepTime;
@@ -71,7 +72,7 @@ public class PaperSpawner : MonoBehaviour
             BigPaper paper = paperObj.GetComponent<BigPaper>();
             paper.paperSpawner = this;
             paper.table = tableCollider;
-            paper.lifeTime = wave.paperLifetime;
+            paper.lifeTime = wave.paperLifetime * lifetimeScale;
 
             paperObj.transform.DOMove(
                 spawnRegion.min + new Vector2(Random.Range(0, spawnRegion.size.x), Random.Range(0, spawnRegion.size.y)), moveTime

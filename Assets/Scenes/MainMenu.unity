@@ -415,7 +415,7 @@ MonoBehaviour:
   OnSubmit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 526767894}
+      - m_Target: {fileID: 1533664771}
         m_MethodName: SpawnCredits
         m_Mode: 1
         m_Arguments:
@@ -554,6 +554,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3643340572944404528, guid: e8d79055e147c7a448292c5a0d9f848c,
+        type: 3}
+      propertyPath: isOnMenu
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643340572944404531, guid: e8d79055e147c7a448292c5a0d9f848c,
         type: 3}
       propertyPath: m_Name
@@ -870,7 +875,7 @@ MonoBehaviour:
   OnSubmit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1340067344}
+      - m_Target: {fileID: 1533664771}
         m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
@@ -891,6 +896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1533664770}
   - component: {fileID: 1533664769}
+  - component: {fileID: 1533664771}
   m_Layer: 0
   m_Name: Title Page
   m_TagString: Untagged
@@ -962,6 +968,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1533664771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533664768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdee197f6a8d6e24f94fd4e440c2b098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSong: {fileID: 8300000, guid: 8132b319ccb8d274b86b168b99b0d651, type: 3}
 --- !u!1001 &1660458352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1245,7 +1264,7 @@ MonoBehaviour:
   OnSubmit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1980658715}
+      - m_Target: {fileID: 1533664771}
         m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:

@@ -612,6 +612,7 @@ MonoBehaviour:
     endSpawnTime: 0.25
     paperLifetime: 10
   debugText: {fileID: 874002543632743169}
+  lifetimeScale: 0.8
   currentWave: 0
   currentRep: 0
   nextRepTime: 0
@@ -1228,6 +1229,7 @@ MonoBehaviour:
   panelMoveOffset: 450
   fadeTime: 0.5
   unreachedStarColor: {r: 0, g: 0, b: 0, a: 0.15686275}
+  ambienceSound: {fileID: 8300000, guid: 4291bf49cb044cc47be407f3c0a6cbe8, type: 3}
   back: {fileID: 1477180811486830604}
   panel: {fileID: 1477180811536314182}
   timeText: {fileID: 1477180810935675051}
@@ -2496,6 +2498,7 @@ MonoBehaviour:
   twoStarThreshold: 12
   threeStarThreshold: 20
   shouldAudioPitch: 1
+  playSong: {fileID: 8300000, guid: 9a53787c991540c4083e90a9b5411878, type: 3}
   interfaceManager: {fileID: 8515988840887390349}
   score: 0
 --- !u!1 &1477180812603500447
