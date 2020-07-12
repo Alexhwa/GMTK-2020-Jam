@@ -85,9 +85,9 @@ public class LevelPlayer : MonoBehaviour
 
     private void PaperSubmitted(BigPaper paper) {
         if (!paper.isCounterfeit)
-            score++;
+            score += 2;
         else
-            score--;
+            score -= 2;
     }
 
     private void PaperTrashed(BigPaper paper) {
@@ -121,5 +121,9 @@ public class LevelPlayer : MonoBehaviour
     private void ActivateHelpBox()
     {
         print("Dialogue Ended. Activating help box.");
+    }
+    private bool CheckFailed()
+    {
+        return score < oneStarThreshold;
     }
 }

@@ -17,6 +17,7 @@ public class ScenesManager : MonoBehaviour
 
     private void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void OnDisable() {

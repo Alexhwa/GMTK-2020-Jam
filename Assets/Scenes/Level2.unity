@@ -665,12 +665,12 @@ PrefabInstance:
     - target: {fileID: 1477180812600581676, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: threeStarThreshold
-      value: 32
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 1477180812600581676, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
       propertyPath: twoStarThreshold
-      value: 24
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 1477180812603500441, guid: 82c4c68b988567047b3438f9903e839d,
         type: 3}
